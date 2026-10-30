@@ -1,0 +1,108 @@
+name: ${COMPOSE_PROJECT_NAME:-hoppscotch}
+
+x-hoppscotch-env: &hoppscotch-env
+  DATABASE_URL: postgresql://hoppscotch:${POSTGRES_PASSWORD:-}@db:5432/hoppscotch
+  DATA_ENCRYPTION_KEY: ${DATA_ENCRYPTION_KEY:-}
+  JWT_SECRET: ${JWT_SECRET:-}
+  SESSION_SECRET: ${SESSION_SECRET:-}
+  TOKEN_SALT_COMPLEXITY: '10'
+  ENABLE_SUBPATH_BASED_ACCESS: 'true'
+  VITE_BASE_URL: http://localhost:${APP_PORT:-18080}
+  VITE_SHORTCODE_BASE_URL: http://localhost:${APP_PORT:-18080}
+  VITE_ADMIN_URL: http://localhost:${APP_PORT:-18080}/admin
+  VITE_BACKEND_GQL_URL: http://localhost:${APP_PORT:-18080}/backend/graphql
+  VITE_BACKEND_WS_URL: ws://localhost:${APP_PORT:-18080}/backend/graphql
+  VITE_BACKEND_API_URL: http://localhost:${APP_PORT:-18080}/backend/v1
+  WHITELISTED_ORIGINS: http://localhost:${APP_PORT:-18080},http://127.0.0.1:${APP_PORT:-18080}
+  VITE_ALLOWED_AUTH_PROVIDERS: EMAIL
+  MAILER_SMTP_ENABLE: 'true'
+  MAILER_USE_CUSTOM_CONFIGS: 'false'
+  MAILER_SMTP_URL: smtp://mailpit:1025
+  MAILER_ADDRESS_FROM: noreply@hoppscotch.local
+  ALLOW_ANALYTICS_COLLECTION: 'false'
+  TRUST_PROXY: 'false'
+  PROXY_APP_URL: http://localhost:${PROXY_PORT:-9159}
+  VITE_PROXYSCOTCH_ACCESS_TOKEN: ${PROXYSCOTCH_TOKEN:-}
+
+services:
+  # Run once: docker compose run --rm init
+  # This explicit service can run before .env exists.
+  init:
+    image: node:22-alpine@sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32
+    profiles: [tools]
+    working_dir: /setup
+    volumes:
+      - .:/setup
+    command: [node, init.mjs]
+    network_mode: none
+
+  db:
+    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hoppscotch
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-}
+      POSTGRES_DB: hoppscotch
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U hoppscotch -d hoppscotch']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  migrate:
+    image: hoppscotch/hoppscotch:2026.10.0@sha256:b4ba7d797fc84f66d55160645453d58620d79490743ae5c74016b20b2516ff9c
+    environment: *hoppscotch-env
+    entrypoint: [sh, -ec]
+    command:
+      - |
+        : "$${DATA_ENCRYPTION_KEY:?Run docker compose run --rm init first}"
+        : "$${JWT_SECRET:?Run docker compose run --rm init first}"
+        : "$${SESSION_SECRET:?Run docker compose run --rm init first}"
+        : "$${VITE_PROXYSCOTCH_ACCESS_TOKEN:?Run docker compose run --rm init first}"
+        exec pnpm exec prisma migrate deploy
+    depends_on:
+      db:
+        condition: service_healthy
+
+  hoppscotch:
+    image: hoppscotch/hoppscotch:2026.10.0@sha256:b4ba7d797fc84f66d55160645453d58620d79490743ae5c74016b20b2516ff9c
+    restart: unless-stopped
+    environment: *hoppscotch-env
+    ports:
+      - '127.0.0.1:${APP_PORT:-18080}:80'
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      mailpit:
+        condition: service_started
+      proxy:
+        condition: service_started
+
+  mailpit:
+    image: axllent/mailpit@sha256:0790692be935ea4420d085694f7985b1f692ca6a8771ab0e0bd8ba75ac180498
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:${MAILPIT_PORT:-8025}:8025'
+    environment:
+      MP_DATABASE: /data/mailpit.db
+    volumes:
+      - mailpit_data:/data
+
+  proxy:
+    image: hoppscotch/proxyscotch:v0.1.4@sha256:36e727ab01b97a68d9c712333cc81431342f581cf4b012833d6612d71b00bcb8
+    restart: unless-stopped
+    environment:
+      PROXYSCOTCH_TOKEN: ${PROXYSCOTCH_TOKEN:-}
+      PROXYSCOTCH_ALLOWED_ORIGINS: http://localhost:${APP_PORT:-18080},http://127.0.0.1:${APP_PORT:-18080}
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    ports:
+      - '127.0.0.1:${PROXY_PORT:-9159}:9159'
+
+volumes:
+  postgres_data:
+  mailpit_data:
