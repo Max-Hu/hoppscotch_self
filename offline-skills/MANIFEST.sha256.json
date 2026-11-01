@@ -29,7 +29,11 @@
   },
   {
     "path": "README.md",
-    "sha256": "91203983c1b633ff13bf7850703bb2f045ac737baab39160921f2209506d01a9"
+    "sha256": "adc9aa72ecdf5f17971515bb9522c964f23d15893c6be4ac79afb4c69eb02f67"
+  },
+  {
+    "path": "docs/VSCODE_COPILOT.md",
+    "sha256": "467412de0666a5997824310de7555fff87598544b155b7d6f2fc3e2f99c78cf0"
   },
   {
     "path": "skill-library/AUDIT_REPORT.md",

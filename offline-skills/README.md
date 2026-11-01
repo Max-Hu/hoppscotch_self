@@ -10,7 +10,9 @@
 2. 阅读 [PROJECT_RULES.md](PROJECT_RULES.md)，将目标项目的技术选择和业务不变量集中记录在那里。
 3. 告诉代理读取具体 `SKILL.md`，例如“按照 `skill-library/skills/systematic-debugging/SKILL.md` 排查”。此目录未向任何宿主全量注册 40 个技能。
 
-所有以下命令都从 `offline-skills/` 内执行。路径中的 `python` 必须是本机已准备的解释器。不要把项目根目录已有的规则覆盖掉，也不要把本目录的规则直接施加到仓库的 Hoppscotch 部署文件。
+**VS Code Copilot 用户：** 请按 [Copilot 接入指南](docs/VSCODE_COPILOT.md)配置技能目录、项目规则和调用方式。下载本目录不等于已经在 Copilot 中注册；技能离线也不等于 Copilot 服务可以断网使用。
+
+本 README 以下命令均从 `offline-skills/` 内执行；Copilot 接入指南另行给出从目标项目根目录调用的路径。路径中的 `python` 必须是本机已准备的解释器。不要把项目根目录已有的规则覆盖掉，也不要把本目录的规则直接施加到仓库的 Hoppscotch 部署文件。
 
 | 工作 | 推荐入口 |
 | --- | --- |
