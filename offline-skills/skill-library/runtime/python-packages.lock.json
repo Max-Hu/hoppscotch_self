@@ -1,0 +1,97 @@
+{
+  "python": "CPython 3.12",
+  "packages": {
+    "python-windows": [
+      {
+        "name": "greenlet",
+        "version": "3.5.6",
+        "wheel_tags": [
+          "Tag: cp312-cp312-win_amd64"
+        ]
+      },
+      {
+        "name": "hypothesis",
+        "version": "6.170.14",
+        "wheel_tags": [
+          "Tag: cp312-cp312-win_amd64"
+        ]
+      },
+      {
+        "name": "playwright",
+        "version": "1.64.1",
+        "wheel_tags": [
+          "Tag: py3-none-any"
+        ]
+      },
+      {
+        "name": "pyee",
+        "version": "14.0.0",
+        "wheel_tags": [
+          "Tag: py3-none-any"
+        ]
+      },
+      {
+        "name": "sortedcontainers",
+        "version": "2.4.0",
+        "wheel_tags": [
+          "Tag: py2-none-any",
+          "Tag: py3-none-any"
+        ]
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "wheel_tags": [
+          "Tag: py3-none-any"
+        ]
+      }
+    ],
+    "python-linux": [
+      {
+        "name": "greenlet",
+        "version": "3.5.6",
+        "wheel_tags": [
+          "Tag: cp312-cp312-manylinux_2_24_x86_64",
+          "Tag: cp312-cp312-manylinux_2_28_x86_64"
+        ]
+      },
+      {
+        "name": "hypothesis",
+        "version": "6.170.14",
+        "wheel_tags": [
+          "Tag: cp312-cp312-manylinux2014_x86_64",
+          "Tag: cp312-cp312-manylinux_2_17_x86_64"
+        ]
+      },
+      {
+        "name": "playwright",
+        "version": "1.64.1",
+        "wheel_tags": [
+          "Tag: py3-none-any"
+        ]
+      },
+      {
+        "name": "pyee",
+        "version": "14.0.0",
+        "wheel_tags": [
+          "Tag: py3-none-any"
+        ]
+      },
+      {
+        "name": "sortedcontainers",
+        "version": "2.4.0",
+        "wheel_tags": [
+          "Tag: py2-none-any",
+          "Tag: py3-none-any"
+        ]
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "wheel_tags": [
+          "Tag: py3-none-any"
+        ]
+      }
+    ]
+  }
+}

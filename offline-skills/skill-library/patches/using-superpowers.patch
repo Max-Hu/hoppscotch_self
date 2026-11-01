@@ -1,0 +1,122 @@
+--- upstream\obra--superpowers\skills\using-superpowers\references\claude-code-tools.md
++++ skills\using-superpowers\references\claude-code-tools.md
+@@ -9,7 +9,7 @@
+ ## Cheaper orchestration for subagent-driven development
+ 
+ The controller session is the most expensive seat in a
+-superpowers:subagent-driven-development run: it reads every dispatch
++subagent-driven-development run: it reads every dispatch
+ result and every report, and it usually runs on the session's most
+ capable model. Claude Code supports nested subagents (three layers below
+ the main conversation by default; `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`
+@@ -18,7 +18,7 @@
+ When your human partner asks for it — or has said the session model is
+ too expensive to spend on coordination — dispatch ONE orchestrator
+ subagent on a mid-tier model with the plan path and the instruction to
+-use superpowers:subagent-driven-development end to end. The orchestrator
++use subagent-driven-development end to end. The orchestrator
+ dispatches its own implementers and reviewers per that skill's Model
+ Selection; the workspace and ledger live on disk, so nothing is lost to
+ the extra layer. Its final message must carry the "Rulings I made" list
+--- upstream\obra--superpowers\skills\using-superpowers\references\codex-tools.md
++++ skills\using-superpowers\references\codex-tools.md
+@@ -95,14 +95,8 @@
+ See `using-git-worktrees` Step 0 and `finishing-a-development-branch`
+ Step 1 for how each skill uses these signals.
+ 
+-## Codex App Finishing
++## Local completion
+ 
+-When the sandbox blocks branch/push operations (detached HEAD in an
+-externally managed worktree), the agent commits all work and informs
+-the user to use the App's native controls:
+-
+-- **"Create branch"** — names the branch, then commit/push/PR via App UI
+-- **"Hand off to local"** — transfers work to the user's local checkout
+-
+-The agent can still run tests, stage files, and output suggested branch
+-names, commit messages, and PR descriptions for the user to copy.
++Report local changes, verification and branch state. Do not commit, publish,
++push or create remote pull requests through the App. Preserve the workspace.
++No remote tools or additional agent/model services are needed.
+--- upstream\obra--superpowers\skills\using-superpowers\references\gemini-tools.md
++++ skills\using-superpowers\references\gemini-tools.md
+@@ -12,8 +12,6 @@
+ | Search file contents | `grep_search` |
+ | Find files by name | `glob` |
+ | List files and subdirectories | `list_directory` |
+-| Fetch a URL | `web_fetch` |
+-| Search the web | `google_web_search` |
+ | Invoke a skill | `activate_skill` |
+ | Dispatch a subagent (`Subagent (general-purpose):` template) | `invoke_agent` with `agent_name: "generalist"` (invocable via `@generalist` chat syntax — see [Subagent support](#subagent-support)) |
+ | Multiple parallel dispatches | Multiple `invoke_agent` calls in the same response |
+@@ -31,12 +29,12 @@
+ 
+ Gemini CLI dispatches subagents through the `invoke_agent` tool, which takes `agent_name` and `prompt` parameters. The same dispatch is also surfaced as a chat-syntax shortcut: typing `@generalist <prompt>` is equivalent to calling `invoke_agent` with `agent_name: "generalist"`. Built-in agent names include `generalist`, `cli_help`, `codebase_investigator`, and (with browser tooling enabled) `browser_agent`.
+ 
+-Skills dispatch with `Subagent (general-purpose):` and either reference a prompt-template file (e.g., `superpowers:subagent-driven-development`'s `./implementer-prompt.md`) or supply an inline prompt. On Gemini CLI:
++Skills dispatch with `Subagent (general-purpose):` and either reference a prompt-template file (e.g., `subagent-driven-development`'s `./implementer-prompt.md`) or supply an inline prompt. On Gemini CLI:
+ 
+ | Skill dispatch form | Gemini CLI equivalent |
+ |---------------------|----------------------|
+ | References a `*-prompt.md` template (implementer, task-reviewer, code-reviewer, etc.) | Fill the template, then `invoke_agent` with `agent_name: "generalist"` and the filled prompt |
+-| References `superpowers:requesting-code-review`'s `./code-reviewer.md` | `invoke_agent` with `agent_name: "generalist"` and the filled review template |
++| References `requesting-code-review`'s `./code-reviewer.md` | `invoke_agent` with `agent_name: "generalist"` and the filled review template |
+ | Inline prompt (no template referenced) | `invoke_agent` with `agent_name: "generalist"` and your inline prompt |
+ 
+ ### Prompt filling
+--- upstream\obra--superpowers\skills\using-superpowers\references\hermes-tools.md
++++ skills\using-superpowers\references\hermes-tools.md
+@@ -12,8 +12,6 @@
+ | Run a shell command | `terminal` |
+ | Search file contents | `search_files` |
+ | Find files by name | `terminal` with `find` |
+-| Fetch a URL / read a webpage | `web_extract(urls=[...])` |
+-| Search the web | `web_search(query=...)` |
+ | Dispatch a subagent | `delegate_task(goal=..., context=..., toolsets=[...], role="leaf")` |
+ | Task tracking | `todo` tool |
+ | Invoke a skill | `skill_view("skill-name")` |
+--- upstream\obra--superpowers\skills\using-superpowers\references\muse-tools.md
++++ skills\using-superpowers\references\muse-tools.md
+@@ -11,8 +11,6 @@
+ | Run a shell command | `bash` |
+ | Search file contents | `search` |
+ | Find files by name | `search` with `glob` |
+-| Fetch a URL | `web_fetch` |
+-| Search the web | `web_search` |
+ | Invoke a skill | `read_file` on `skills/<name>/SKILL.md` or native skill tool |
+ | Dispatch a subagent (`Subagent (general-purpose):` template) | `subagent_spawn` with prompt filling |
+ | Task tracking ("create a todo", "mark complete") | `write_todos` or `bash` task file |
+--- upstream\obra--superpowers\skills\using-superpowers\SKILL.md
++++ skills\using-superpowers\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: using-superpowers
+-description: Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions
++description: Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before
++  ANY response including clarifying questions
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ <SUBAGENT-STOP>
+ If you were dispatched as a subagent to execute a specific task, ignore this skill.
+@@ -27,8 +38,8 @@
+ 
+ When multiple skills apply, process skills come first — they set the approach, then implementation skills (frontend-design, etc.) carry it out. Brainstorming and systematic-debugging are Superpowers' most common process skills, but the rule holds for any of them.
+ 
+-- "Let's build X" → superpowers:brainstorming first, then implementation skills.
+-- "Fix this bug" → superpowers:systematic-debugging first, then domain skills.
++- "Let's build X" → brainstorming first, then implementation skills.
++- "Fix this bug" → systematic-debugging first, then domain skills.
+ 
+ ## Red Flags
+ 

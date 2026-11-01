@@ -1,0 +1,37 @@
+--- upstream\obra--superpowers\skills\systematic-debugging\SKILL.md
++++ skills\systematic-debugging\SKILL.md
+@@ -2,6 +2,16 @@
+ name: systematic-debugging
+ description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Systematic Debugging
+ 
+@@ -174,7 +184,7 @@
+    - Automated test if possible
+    - One-off test script if no framework
+    - MUST have before fixing
+-   - Use the `superpowers:test-driven-development` skill for writing proper failing tests
++   - Use the `test-driven-development` skill for writing proper failing tests
+ 
+ 2. **Implement Single Fix**
+    - Address the root cause identified
+@@ -186,7 +196,7 @@
+    - Test passes now?
+    - No other tests broken?
+    - Issue actually resolved?
+-   - Use the `superpowers:verification-before-completion` skill before claiming success
++   - Use the `verification-before-completion` skill before claiming success
+ 
+ 4. **If Fix Doesn't Work**
+    - STOP

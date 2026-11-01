@@ -1,0 +1,1344 @@
+{
+  "scope": "40 selected skill trees and first-party runtime Python adapters; raw sources, binaries and vendored dependencies are not certified network-free",
+  "scanner_revision": 2,
+  "skills": [
+    {
+      "name": "writing-plans",
+      "repo": "obra/superpowers",
+      "source_path": "skills/writing-plans",
+      "profile": "skills",
+      "changes": [
+        "flattened host-specific skill names",
+        "single-session local handoff; preserve existing authorization"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "systematic-debugging",
+      "repo": "obra/superpowers",
+      "source_path": "skills/systematic-debugging",
+      "profile": "skills",
+      "changes": [
+        "flattened host-specific skill names"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "verification-before-completion",
+      "repo": "obra/superpowers",
+      "source_path": "skills/verification-before-completion",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "executing-plans",
+      "repo": "obra/superpowers",
+      "source_path": "skills/executing-plans",
+      "profile": "skills",
+      "changes": [
+        "flattened host-specific skill names"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "test-driven-development",
+      "repo": "obra/superpowers",
+      "source_path": "skills/test-driven-development",
+      "profile": "skills",
+      "changes": [
+        "flattened host-specific skill names"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "receiving-code-review",
+      "repo": "obra/superpowers",
+      "source_path": "skills/receiving-code-review",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "requesting-code-review",
+      "repo": "obra/superpowers",
+      "source_path": "skills/requesting-code-review",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "using-git-worktrees",
+      "repo": "obra/superpowers",
+      "source_path": "skills/using-git-worktrees",
+      "profile": "skills",
+      "changes": [
+        "removed automatic dependency provisioning"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "repo": "obra/superpowers",
+      "source_path": "skills/finishing-a-development-branch",
+      "profile": "skills",
+      "changes": [
+        "removed remote Git/GitHub command",
+        "removed remote publish/PR menu"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "brainstorming",
+      "repo": "obra/superpowers",
+      "source_path": "skills/brainstorming",
+      "profile": "skills",
+      "changes": [
+        "flattened host-specific skill names",
+        "removed remote branding image and external link; loopback-only companion with CSP"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "scripts/helper.js",
+          "line": 80,
+          "category": "network-api-review",
+          "text": "ws = new WebSocket(websocketUrl());",
+          "disposition": "reviewed: WebSocket URL is constructed from window.location.host; server only binds loopback and CSP permits same-origin connections."
+        },
+        {
+          "file": "visual-companion.md",
+          "line": 50,
+          "category": "inert-source-link",
+          "text": "never strip the query string, and never hand out a bare `http://host:port`. The",
+          "disposition": "source-only; do not fetch"
+        }
+      ]
+    },
+    {
+      "name": "using-superpowers",
+      "repo": "obra/superpowers",
+      "source_path": "skills/using-superpowers",
+      "profile": "skills",
+      "changes": [
+        "flattened host-specific skill names",
+        "removed online host-tool mappings and App publication fallback"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "python-design-patterns",
+      "repo": "wshobson/agents",
+      "source_path": "plugins/python-development/skills/python-design-patterns",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "async-python-patterns",
+      "repo": "wshobson/agents",
+      "source_path": "plugins/python-development/skills/async-python-patterns",
+      "profile": "skills",
+      "changes": [
+        "HTTP examples target local mocks only"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "references/details.md",
+          "line": 207,
+          "category": "network-api-review",
+          "text": "async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as response:",
+          "disposition": "reviewed: Illustrative HTTP clients: concrete endpoints now loopback mocks; variable URL snippets must run under offline_python.py and be given local mocks. Not an endpoint validator."
+        },
+        {
+          "file": "references/details.md",
+          "line": 353,
+          "category": "network-api-review",
+          "text": "tasks = [session.get(f\"http://127.0.0.1:8000/item/{i}\") for i in range(50)]",
+          "disposition": "reviewed: Illustrative HTTP clients: concrete endpoints now loopback mocks; variable URL snippets must run under offline_python.py and be given local mocks. Not an endpoint validator."
+        },
+        {
+          "file": "references/details.md",
+          "line": 385,
+          "category": "network-api-review",
+          "text": "response = requests.get(url)  # Also blocks!",
+          "disposition": "reviewed: Illustrative HTTP clients: concrete endpoints now loopback mocks; variable URL snippets must run under offline_python.py and be given local mocks. Not an endpoint validator."
+        },
+        {
+          "file": "references/details.md",
+          "line": 393,
+          "category": "network-api-review",
+          "text": "response = await client.get(url)",
+          "disposition": "reviewed: Illustrative HTTP clients: concrete endpoints now loopback mocks; variable URL snippets must run under offline_python.py and be given local mocks. Not an endpoint validator."
+        }
+      ]
+    },
+    {
+      "name": "python-testing-patterns",
+      "repo": "wshobson/agents",
+      "source_path": "plugins/python-development/skills/python-testing-patterns",
+      "profile": "skills",
+      "changes": [
+        "HTTP examples target local mocks only"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "references/details.md",
+          "line": 207,
+          "category": "network-api-review",
+          "text": "response = requests.get(f\"{self.base_url}/users/{user_id}\")",
+          "disposition": "reviewed: requests calls are API-client examples; tests patch requests.get/post and concrete base URLs now use loopback. Run any adapted tests with offline_python.py."
+        },
+        {
+          "file": "references/details.md",
+          "line": 213,
+          "category": "network-api-review",
+          "text": "response = requests.post(f\"{self.base_url}/users\", json=data)",
+          "disposition": "reviewed: requests calls are API-client examples; tests patch requests.get/post and concrete base URLs now use loopback. Run any adapted tests with offline_python.py."
+        }
+      ]
+    },
+    {
+      "name": "python-project-structure",
+      "repo": "wshobson/agents",
+      "source_path": "plugins/python-development/skills/python-project-structure",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "code-review-excellence",
+      "repo": "wshobson/agents",
+      "source_path": "plugins/developer-essentials/skills/code-review-excellence",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "references/review-patterns.md",
+          "line": 63,
+          "category": "network-api-review",
+          "text": "const response = await fetch(`/api/users/${id}`);",
+          "disposition": "reviewed: Browser fetch examples use relative /api/users paths, resolved against the designated local application."
+        },
+        {
+          "file": "references/review-patterns.md",
+          "line": 70,
+          "category": "network-api-review",
+          "text": "const response = await fetch(`/api/users/${id}`);",
+          "disposition": "reviewed: Browser fetch examples use relative /api/users paths, resolved against the designated local application."
+        }
+      ]
+    },
+    {
+      "name": "supabase-postgres-best-practices",
+      "repo": "supabase/agent-skills",
+      "source_path": "skills/supabase-postgres-best-practices",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "CHANGELOG.md",
+          "line": 3,
+          "category": "inert-source-link",
+          "text": "## [1.6.0](https://github.com/supabase/agent-skills/compare/supabase-postgres-best-practices-v1.5.0...supabase-postgres-best-practices-v1.6.0) (2026-07-30)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 8,
+          "category": "inert-source-link",
+          "text": "* add schema-constraints reference for safe migration patterns ([#30](https://github.com/supabase/agent-skills/issues/30)) ([9b236f3](https://github.com/supabase/agent-skills/commit/9b236f3ebd65d76a2c570f19931353da9c858d5a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 9,
+          "category": "inert-source-link",
+          "text": "* using Supabase agent skills ([#12](https://github.com/supabase/agent-skills/issues/12)) ([7c2e389](https://github.com/supabase/agent-skills/commit/7c2e3894fddfde8eb6c77d2a8921904543b9be7a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 14,
+          "category": "inert-source-link",
+          "text": "* correct broken reference link in postgres best practices skill ([#58](https://github.com/supabase/agent-skills/issues/58)) ([f4e2277](https://github.com/supabase/agent-skills/commit/f4e22777fd8573537297b568c16e5a45a25927da))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 15,
+          "category": "inert-source-link",
+          "text": "* cover SECURITY DEFINER, auth.role() deprecation, and BOLA in security checklist ([#85](https://github.com/supabase/agent-skills/issues/85)) ([133f43e](https://github.com/supabase/agent-skills/commit/133f43e8c2ffc48823ff0630c692cabecea3e3a3))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 16,
+          "category": "inert-source-link",
+          "text": "* **supabase-postgres-best-practices:** make skill description trigger-rich ([#194](https://github.com/supabase/agent-skills/issues/194)) ([3291216](https://github.com/supabase/agent-skills/commit/32912161e2732c3e5001c6811a76c1f8308ed0da))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 18,
+          "category": "inert-source-link",
+          "text": "## [1.5.0](https://github.com/supabase/agent-skills/compare/supabase-postgres-best-practices-v1.4.0...supabase-postgres-best-practices-v1.5.0) (2026-07-30)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 23,
+          "category": "inert-source-link",
+          "text": "* add schema-constraints reference for safe migration patterns ([#30](https://github.com/supabase/agent-skills/issues/30)) ([9b236f3](https://github.com/supabase/agent-skills/commit/9b236f3ebd65d76a2c570f19931353da9c858d5a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 24,
+          "category": "inert-source-link",
+          "text": "* using Supabase agent skills ([#12](https://github.com/supabase/agent-skills/issues/12)) ([7c2e389](https://github.com/supabase/agent-skills/commit/7c2e3894fddfde8eb6c77d2a8921904543b9be7a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 29,
+          "category": "inert-source-link",
+          "text": "* correct broken reference link in postgres best practices skill ([#58](https://github.com/supabase/agent-skills/issues/58)) ([f4e2277](https://github.com/supabase/agent-skills/commit/f4e22777fd8573537297b568c16e5a45a25927da))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 30,
+          "category": "inert-source-link",
+          "text": "* cover SECURITY DEFINER, auth.role() deprecation, and BOLA in security checklist ([#85](https://github.com/supabase/agent-skills/issues/85)) ([133f43e](https://github.com/supabase/agent-skills/commit/133f43e8c2ffc48823ff0630c692cabecea3e3a3))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 31,
+          "category": "inert-source-link",
+          "text": "* **supabase-postgres-best-practices:** make skill description trigger-rich ([#194](https://github.com/supabase/agent-skills/issues/194)) ([3291216](https://github.com/supabase/agent-skills/commit/32912161e2732c3e5001c6811a76c1f8308ed0da))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 33,
+          "category": "inert-source-link",
+          "text": "## [1.4.0](https://github.com/supabase/agent-skills/compare/v1.3.0...v1.4.0) (2026-07-10)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 38,
+          "category": "inert-source-link",
+          "text": "* add schema-constraints reference for safe migration patterns ([#30](https://github.com/supabase/agent-skills/issues/30)) ([9b236f3](https://github.com/supabase/agent-skills/commit/9b236f3ebd65d76a2c570f19931353da9c858d5a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 39,
+          "category": "inert-source-link",
+          "text": "* using Supabase agent skills ([#12](https://github.com/supabase/agent-skills/issues/12)) ([7c2e389](https://github.com/supabase/agent-skills/commit/7c2e3894fddfde8eb6c77d2a8921904543b9be7a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 44,
+          "category": "inert-source-link",
+          "text": "* correct broken reference link in postgres best practices skill ([#58](https://github.com/supabase/agent-skills/issues/58)) ([f4e2277](https://github.com/supabase/agent-skills/commit/f4e22777fd8573537297b568c16e5a45a25927da))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 45,
+          "category": "inert-source-link",
+          "text": "* cover SECURITY DEFINER, auth.role() deprecation, and BOLA in security checklist ([#85](https://github.com/supabase/agent-skills/issues/85)) ([133f43e](https://github.com/supabase/agent-skills/commit/133f43e8c2ffc48823ff0630c692cabecea3e3a3))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 47,
+          "category": "inert-source-link",
+          "text": "## [1.3.0](https://github.com/supabase/agent-skills/compare/v1.2.0...v1.3.0) (2026-06-05)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 52,
+          "category": "inert-source-link",
+          "text": "* add schema-constraints reference for safe migration patterns ([#30](https://github.com/supabase/agent-skills/issues/30)) ([9b236f3](https://github.com/supabase/agent-skills/commit/9b236f3ebd65d76a2c570f19931353da9c858d5a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 53,
+          "category": "inert-source-link",
+          "text": "* using Supabase agent skills ([#12](https://github.com/supabase/agent-skills/issues/12)) ([7c2e389](https://github.com/supabase/agent-skills/commit/7c2e3894fddfde8eb6c77d2a8921904543b9be7a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 58,
+          "category": "inert-source-link",
+          "text": "* correct broken reference link in postgres best practices skill ([#58](https://github.com/supabase/agent-skills/issues/58)) ([f4e2277](https://github.com/supabase/agent-skills/commit/f4e22777fd8573537297b568c16e5a45a25927da))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 59,
+          "category": "inert-source-link",
+          "text": "* cover SECURITY DEFINER, auth.role() deprecation, and BOLA in security checklist ([#85](https://github.com/supabase/agent-skills/issues/85)) ([133f43e](https://github.com/supabase/agent-skills/commit/133f43e8c2ffc48823ff0630c692cabecea3e3a3))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 61,
+          "category": "inert-source-link",
+          "text": "## [1.2.0](https://github.com/supabase/agent-skills/compare/v1.1.1...v1.2.0) (2026-06-02)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 66,
+          "category": "inert-source-link",
+          "text": "* add schema-constraints reference for safe migration patterns ([#30](https://github.com/supabase/agent-skills/issues/30)) ([9b236f3](https://github.com/supabase/agent-skills/commit/9b236f3ebd65d76a2c570f19931353da9c858d5a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 67,
+          "category": "inert-source-link",
+          "text": "* using Supabase agent skills ([#12](https://github.com/supabase/agent-skills/issues/12)) ([7c2e389](https://github.com/supabase/agent-skills/commit/7c2e3894fddfde8eb6c77d2a8921904543b9be7a))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 72,
+          "category": "inert-source-link",
+          "text": "* correct broken reference link in postgres best practices skill ([#58](https://github.com/supabase/agent-skills/issues/58)) ([f4e2277](https://github.com/supabase/agent-skills/commit/f4e22777fd8573537297b568c16e5a45a25927da))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "CHANGELOG.md",
+          "line": 73,
+          "category": "inert-source-link",
+          "text": "* cover SECURITY DEFINER, auth.role() deprecation, and BOLA in security checklist ([#85](https://github.com/supabase/agent-skills/issues/85)) ([133f43e](https://github.com/supabase/agent-skills/commit/133f43e8c2ffc48823ff0630c692cabecea3e3a3))",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/_contributing.md",
+          "line": 151,
+          "category": "inert-source-link",
+          "text": "[Postgres Indexes](https://www.postgresql.org/docs/current/indexes.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/_template.md",
+          "line": 34,
+          "category": "inert-source-link",
+          "text": "Reference: [Postgres Docs](https://www.postgresql.org/docs/current/)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/advanced-full-text-search.md",
+          "line": 55,
+          "category": "inert-source-link",
+          "text": "Reference: [Full Text Search](https://supabase.com/docs/guides/database/full-text-search)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/advanced-jsonb-indexing.md",
+          "line": 49,
+          "category": "inert-source-link",
+          "text": "Reference: [JSONB Indexes](https://www.postgresql.org/docs/current/datatype-json.html#JSON-INDEXING)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/conn-idle-timeout.md",
+          "line": 46,
+          "category": "inert-source-link",
+          "text": "Reference: [Connection Timeouts](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-IDLE-IN-TRANSACTION-SESSION-TIMEOUT)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/conn-limits.md",
+          "line": 44,
+          "category": "inert-source-link",
+          "text": "Reference: [Database Connections](https://supabase.com/docs/guides/platform/performance#connection-management)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/conn-pooling.md",
+          "line": 41,
+          "category": "inert-source-link",
+          "text": "Reference: [Connection Pooling](https://supabase.com/docs/guides/database/connecting-to-postgres#connection-pooler)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/conn-prepared-statements.md",
+          "line": 46,
+          "category": "inert-source-link",
+          "text": "Reference: [Prepared Statements with Pooling](https://supabase.com/docs/guides/database/connecting-to-postgres#connection-pool-modes)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/data-batch-inserts.md",
+          "line": 54,
+          "category": "inert-source-link",
+          "text": "Reference: [COPY](https://www.postgresql.org/docs/current/sql-copy.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/data-n-plus-one.md",
+          "line": 53,
+          "category": "inert-source-link",
+          "text": "Reference: [N+1 Query Problem](https://supabase.com/docs/guides/database/query-optimization)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/data-pagination.md",
+          "line": 50,
+          "category": "inert-source-link",
+          "text": "Reference: [Pagination](https://supabase.com/docs/guides/database/pagination)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/data-upsert.md",
+          "line": 50,
+          "category": "inert-source-link",
+          "text": "Reference: [INSERT ON CONFLICT](https://www.postgresql.org/docs/current/sql-insert.html#SQL-ON-CONFLICT)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/lock-advisory.md",
+          "line": 56,
+          "category": "inert-source-link",
+          "text": "Reference: [Advisory Locks](https://www.postgresql.org/docs/current/explicit-locking.html#ADVISORY-LOCKS)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/lock-deadlock-prevention.md",
+          "line": 68,
+          "category": "inert-source-link",
+          "text": "[Deadlocks](https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-DEADLOCKS)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/lock-short-transactions.md",
+          "line": 50,
+          "category": "inert-source-link",
+          "text": "Reference: [Transaction Management](https://www.postgresql.org/docs/current/tutorial-transactions.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/lock-skip-locked.md",
+          "line": 54,
+          "category": "inert-source-link",
+          "text": "Reference: [SELECT FOR UPDATE SKIP LOCKED](https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/monitor-explain-analyze.md",
+          "line": 45,
+          "category": "inert-source-link",
+          "text": "Reference: [EXPLAIN](https://supabase.com/docs/guides/database/inspect)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/monitor-pg-stat-statements.md",
+          "line": 55,
+          "category": "inert-source-link",
+          "text": "Reference: [pg_stat_statements](https://supabase.com/docs/guides/database/extensions/pg_stat_statements)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/monitor-vacuum-analyze.md",
+          "line": 55,
+          "category": "inert-source-link",
+          "text": "Reference: [VACUUM](https://supabase.com/docs/guides/database/database-size#vacuum-operations)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/query-composite-indexes.md",
+          "line": 44,
+          "category": "inert-source-link",
+          "text": "Reference: [Multicolumn Indexes](https://www.postgresql.org/docs/current/indexes-multicolumn.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/query-covering-indexes.md",
+          "line": 40,
+          "category": "inert-source-link",
+          "text": "Reference: [Index-Only Scans](https://www.postgresql.org/docs/current/indexes-index-only-scans.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/query-index-types.md",
+          "line": 48,
+          "category": "inert-source-link",
+          "text": "Reference: [Index Types](https://www.postgresql.org/docs/current/indexes-types.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/query-missing-indexes.md",
+          "line": 43,
+          "category": "inert-source-link",
+          "text": "Reference: [Query Optimization](https://supabase.com/docs/guides/database/query-optimization)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/query-partial-indexes.md",
+          "line": 45,
+          "category": "inert-source-link",
+          "text": "Reference: [Partial Indexes](https://www.postgresql.org/docs/current/indexes-partial.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/schema-constraints.md",
+          "line": 80,
+          "category": "inert-source-link",
+          "text": "Reference: [Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/schema-data-types.md",
+          "line": 46,
+          "category": "inert-source-link",
+          "text": "Reference: [Data Types](https://www.postgresql.org/docs/current/datatype.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/schema-foreign-key-indexes.md",
+          "line": 59,
+          "category": "inert-source-link",
+          "text": "Reference: [Foreign Keys](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/schema-lowercase-identifiers.md",
+          "line": 55,
+          "category": "inert-source-link",
+          "text": "Reference: [Identifiers and Key Words](https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/schema-partitioning.md",
+          "line": 55,
+          "category": "inert-source-link",
+          "text": "Reference: [Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/schema-primary-keys.md",
+          "line": 61,
+          "category": "inert-source-link",
+          "text": "[Identity Columns](https://www.postgresql.org/docs/current/sql-createtable.html#SQL-CREATETABLE-PARMS-GENERATED-IDENTITY)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/security-privileges.md",
+          "line": 54,
+          "category": "inert-source-link",
+          "text": "Reference: [Roles and Privileges](https://supabase.com/blog/postgres-roles-and-privileges)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/security-rls-basics.md",
+          "line": 50,
+          "category": "inert-source-link",
+          "text": "Reference: [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/security-rls-performance.md",
+          "line": 63,
+          "category": "inert-source-link",
+          "text": "Reference: [RLS Performance](https://supabase.com/docs/guides/database/postgres/row-level-security#rls-performance-recommendations)",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "SKILL.md",
+          "line": 79,
+          "category": "inert-source-link",
+          "text": "- https://www.postgresql.org/docs/current/",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "SKILL.md",
+          "line": 80,
+          "category": "inert-source-link",
+          "text": "- https://supabase.com/docs",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "SKILL.md",
+          "line": 81,
+          "category": "inert-source-link",
+          "text": "- https://wiki.postgresql.org/wiki/Performance_Optimization",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "SKILL.md",
+          "line": 82,
+          "category": "inert-source-link",
+          "text": "- https://supabase.com/docs/guides/database/overview",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "SKILL.md",
+          "line": 83,
+          "category": "inert-source-link",
+          "text": "- https://supabase.com/docs/guides/auth/row-level-security",
+          "disposition": "source-only; do not fetch"
+        }
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "repo": "anthropics/skills",
+      "source_path": "skills/webapp-testing",
+      "profile": "skills",
+      "changes": [
+        "local browser prerequisites and UI-state waits"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "examples/console_logging.py",
+          "line": 24,
+          "category": "network-api-review",
+          "text": "page.goto(url)",
+          "disposition": "reviewed: Localhost page only; launch_local_browser plus service_workers=block and protect_context installed before navigation."
+        },
+        {
+          "file": "examples/element_discovery.py",
+          "line": 13,
+          "category": "network-api-review",
+          "text": "page.goto('http://localhost:5173')",
+          "disposition": "reviewed: Localhost page only; launch_local_browser plus service_workers=block and protect_context installed before navigation."
+        },
+        {
+          "file": "examples/static_html_automation.py",
+          "line": 17,
+          "category": "network-api-review",
+          "text": "page.goto(file_url)",
+          "disposition": "reviewed: Local file page; launch_local_browser plus service_workers=block and protect_context installed before navigation."
+        },
+        {
+          "file": "scripts/with_server.py",
+          "line": 53,
+          "category": "network-api-review",
+          "text": "with socket.create_connection(('127.0.0.1',port),timeout=.2):break",
+          "disposition": "reviewed: Readiness probes explicitly connect 127.0.0.1. Python commands receive guarded environment and checked interpreter flags. Not an arbitrary-subprocess sandbox."
+        },
+        {
+          "file": "SKILL.md",
+          "line": 73,
+          "category": "network-api-review",
+          "text": "page.goto('http://localhost:5173') # Server already running and ready",
+          "disposition": "reviewed: Example navigates localhost with guarded browser context; helper examples now use local Python commands, no shell/npm startup."
+        }
+      ]
+    },
+    {
+      "name": "frontend-design",
+      "repo": "anthropics/skills",
+      "source_path": "skills/frontend-design",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "repo": "mattpocock/skills",
+      "source_path": "skills/engineering/improve-codebase-architecture",
+      "profile": "skills",
+      "changes": [
+        "removed report CDNs"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "codebase-design",
+      "repo": "mattpocock/skills",
+      "source_path": "skills/engineering/codebase-design",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "domain-modeling",
+      "repo": "mattpocock/skills",
+      "source_path": "skills/engineering/domain-modeling",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "grilling",
+      "repo": "mattpocock/skills",
+      "source_path": "skills/productivity/grilling",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "differential-review",
+      "repo": "trailofbits/skills",
+      "source_path": "plugins/differential-review/skills/differential-review",
+      "profile": "skills",
+      "changes": [
+        "removed remote Git/GitHub command"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "property-based-testing",
+      "repo": "trailofbits/skills",
+      "source_path": "plugins/property-based-testing/skills/property-based-testing",
+      "profile": "skills",
+      "changes": [],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "references/libraries.md",
+          "line": 77,
+          "category": "inert-source-link",
+          "text": "Tutorials: [secure-contracts.com](https://secure-contracts.com).",
+          "disposition": "source-only; do not fetch"
+        }
+      ]
+    },
+    {
+      "name": "htmx",
+      "repo": "damusix/skills",
+      "source_path": "htmx",
+      "profile": "skills",
+      "changes": [
+        "replaced CDN examples with local assets; removed online upgrade checker"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "references/attributes.md",
+          "line": 619,
+          "category": "inert-source-link",
+          "text": "[^1]: htmx attribute reference. <https://htmx.org/reference/#attributes> — complete list of core and additional attributes with descriptions.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/attributes.md",
+          "line": 621,
+          "category": "inert-source-link",
+          "text": "[^2]: htmx documentation. <https://htmx.org/docs/> — attribute inheritance, triggering, swapping, and request behavior.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/attributes.md",
+          "line": 623,
+          "category": "inert-source-link",
+          "text": "[^3]: htmx 4 migration guide. <https://four.htmx.org/docs/get-started/migration/> — attribute removals (`hx-params`, `hx-disinherit`, `hx-ext`, `hx-request`, `hx-history`; `hx-prompt` restored via extension in beta5), new attributes (`hx-action`, `hx-method`, `hx-status`, `hx-config`, `hx-ignore`), and explicit inheritance via `:inherited` suffix.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/attributes.md",
+          "line": 625,
+          "category": "inert-source-link",
+          "text": "[^4]: htmx GitHub repository. <https://github.com/bigskysoftware/htmx> — source code and per-attribute behavior.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/events-api.md",
+          "line": 333,
+          "category": "network-api-review",
+          "text": "return new EventSource(target.href, { withCredentials: true });",
+          "disposition": "reviewed: EventSource and WebSocket factories validate same-origin targets. Application must be served at designated loopback origin. Examples do not authorize remote service use."
+        },
+        {
+          "file": "references/events-api.md",
+          "line": 342,
+          "category": "network-api-review",
+          "text": "return new WebSocket(target.href, ['wss']);",
+          "disposition": "reviewed: EventSource and WebSocket factories validate same-origin targets. Application must be served at designated loopback origin. Examples do not authorize remote service use."
+        },
+        {
+          "file": "references/events-api.md",
+          "line": 667,
+          "category": "inert-source-link",
+          "text": "[^1]: htmx events reference. <https://htmx.org/events/> — complete v2 event list with descriptions and `event.detail` properties.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/events-api.md",
+          "line": 669,
+          "category": "inert-source-link",
+          "text": "[^2]: htmx JavaScript API reference. <https://htmx.org/api/> — all JS methods, utilities, and factory properties.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/events-api.md",
+          "line": 671,
+          "category": "inert-source-link",
+          "text": "[^3]: htmx reference — configuration options. <https://htmx.org/reference/#config>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/events-api.md",
+          "line": 673,
+          "category": "inert-source-link",
+          "text": "[^4]: htmx documentation — extensions API. <https://htmx.org/docs/#extensions>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/events-api.md",
+          "line": 675,
+          "category": "inert-source-link",
+          "text": "[^5]: htmx 4 migration guide — event renames (colon-separated format), removed events (validation, XHR progress), removed JS methods (`htmx.addClass`, `htmx.location`, `htmx.takeClass`, etc.), new methods (`htmx.timeout`), config key renames and removals, new config keys (`noSwap`, `implicitInheritance`, `morphScanLimit`), extension API change (`de",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/extensions.md",
+          "line": 414,
+          "category": "inert-source-link",
+          "text": "> **[htmx 4]** These extensions exist only on the htmx 4 line (ship in `dist/ext/` of the htmx package). Highlights below; full docs at <https://four.htmx.org/extensions/>.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/extensions.md",
+          "line": 462,
+          "category": "inert-source-link",
+          "text": "[^1]: htmx extensions directory. <https://htmx.org/extensions/> — official and community extension list with install instructions.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/extensions.md",
+          "line": 464,
+          "category": "inert-source-link",
+          "text": "[^2]: htmx documentation — extensions. <https://htmx.org/docs/#extensions>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/extensions.md",
+          "line": 466,
+          "category": "inert-source-link",
+          "text": "[^3]: htmx 4 extension docs (as of 4.0.0-beta5) — extension auto-registration (no `hx-ext` attribute needed), `defineExtension` → `registerExtension`, 16 official extensions in `dist/ext/`, `htmax.js` bundle composition, `hx-live` and `hx-prompt` extension pages, Idiomorph superseded by `innerMorph`/`outerMorph`, `response-targets` superseded by `h",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/gotchas.md",
+          "line": 128,
+          "category": "inert-source-link",
+          "text": "A [Wagtail CMS analysis of HTTP Archive data](https://wagtail.org/blog/htmx-accessibility-gaps-data-and-recommendations/) found that since November 2024, htmx-powered sites score below the cross-technology average on Lighthouse accessibility checks. The most common failures on htmx sites:",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/gotchas.md",
+          "line": 136,
+          "category": "inert-source-link",
+          "text": "This isn't inherent to htmx — it's a gap in documentation and examples. The fix is to follow [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/) when implementing interactive patterns.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/gotchas.md",
+          "line": 461,
+          "category": "inert-source-link",
+          "text": "[^1]: htmx documentation. <https://htmx.org/docs/> — security, accessibility, and integration guidance.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/gotchas.md",
+          "line": 463,
+          "category": "inert-source-link",
+          "text": "[^2]: htmx documentation — security considerations. <https://htmx.org/docs/#security>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/gotchas.md",
+          "line": 465,
+          "category": "inert-source-link",
+          "text": "[^3]: htmx 4 migration guide — backward compatibility layer (`htmx-2-compat` extension), behavioral changes, removed attributes and config options. <https://four.htmx.org/docs/get-started/migration/>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/gotchas.md",
+          "line": 467,
+          "category": "inert-source-link",
+          "text": "[^4]: htmx GitHub repository. <https://github.com/bigskysoftware/htmx> — issue tracker and source for edge-case behavior.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/patterns.md",
+          "line": 778,
+          "category": "inert-source-link",
+          "text": "[^1]: htmx examples. <https://htmx.org/examples/> — official UI pattern examples (click to edit, bulk update, lazy loading, infinite scroll, active search, progress bar, etc.).",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/patterns.md",
+          "line": 780,
+          "category": "inert-source-link",
+          "text": "[^2]: htmx documentation. <https://htmx.org/docs/> — attribute behavior and request lifecycle underlying all patterns.",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/REFERENCE.md",
+          "line": 45,
+          "category": "inert-source-link",
+          "text": "| htmx documentation (v2) | https://htmx.org/docs/ |",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/REFERENCE.md",
+          "line": 46,
+          "category": "inert-source-link",
+          "text": "| htmx reference (v2) | https://htmx.org/reference/ |",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/REFERENCE.md",
+          "line": 47,
+          "category": "inert-source-link",
+          "text": "| htmx 4 documentation | https://four.htmx.org/ |",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/REFERENCE.md",
+          "line": 48,
+          "category": "inert-source-link",
+          "text": "| htmx 4 migration guide | https://four.htmx.org/docs/get-started/migration/ |",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/REFERENCE.md",
+          "line": 49,
+          "category": "inert-source-link",
+          "text": "| htmx GitHub repo | https://github.com/bigskysoftware/htmx |",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/REFERENCE.md",
+          "line": 50,
+          "category": "inert-source-link",
+          "text": "| htmx extensions | https://htmx.org/extensions/ |",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/requests.md",
+          "line": 426,
+          "category": "inert-source-link",
+          "text": "[^1]: htmx documentation — AJAX, triggers, parameters, and request lifecycle. <https://htmx.org/docs/#ajax>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/requests.md",
+          "line": 428,
+          "category": "inert-source-link",
+          "text": "[^2]: htmx reference — request and response headers. <https://htmx.org/reference/#headers>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/requests.md",
+          "line": 430,
+          "category": "inert-source-link",
+          "text": "[^3]: htmx documentation — CSRF, security, and request configuration. <https://htmx.org/docs/#security>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/requests.md",
+          "line": 432,
+          "category": "inert-source-link",
+          "text": "[^4]: htmx 4 migration guide — header renames (`HX-Trigger` → `HX-Source`), removed headers (`HX-Trigger-Name`, `HX-Trigger-After-Settle`, `HX-Trigger-After-Swap`; `HX-Prompt` restored via the `hx-prompt` extension in beta5), new headers (`HX-Request-Type`, `Accept`), fetch replacing XHR, default timeout change. <https://four.htmx.org/docs/get-star",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/swapping.md",
+          "line": 413,
+          "category": "inert-source-link",
+          "text": "[^1]: htmx documentation — swapping strategies, targets, and OOB swaps. <https://htmx.org/docs/#swapping>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/swapping.md",
+          "line": 415,
+          "category": "inert-source-link",
+          "text": "[^2]: htmx documentation — CSS transitions. <https://htmx.org/docs/#css_transitions>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/swapping.md",
+          "line": 417,
+          "category": "inert-source-link",
+          "text": "[^3]: htmx documentation — View Transitions API. <https://htmx.org/docs/#view-transitions>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/swapping.md",
+          "line": 419,
+          "category": "inert-source-link",
+          "text": "[^4]: htmx reference — `hx-swap` attribute values. <https://htmx.org/reference/#attributes>",
+          "disposition": "source-only; do not fetch"
+        },
+        {
+          "file": "references/swapping.md",
+          "line": 421,
+          "category": "inert-source-link",
+          "text": "[^5]: htmx 4 migration guide — `innerMorph`/`outerMorph` swap strategies, short aliases (`before`, `after`, `prepend`, `append`), `<hx-partial>` element, OOB swap order change (main first, then OOB), scroll modifier syntax change. <https://four.htmx.org/docs/get-started/migration/>",
+          "disposition": "source-only; do not fetch"
+        }
+      ]
+    },
+    {
+      "name": "web-design-guidelines",
+      "repo": "vercel-labs/agent-skills",
+      "source_path": "skills/web-design-guidelines",
+      "profile": "skills",
+      "changes": [
+        "vendored interface guidelines instead of WebFetch"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-apply-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-apply-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-archive-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-archive-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-bulk-archive-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-bulk-archive-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-continue-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-continue-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-explore",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-explore",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-ff-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-ff-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-new-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-new-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-onboard",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-onboard",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-propose",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-propose",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-sync-specs",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-sync-specs",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-update-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-update-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "openspec-verify-change",
+      "repo": "Fission-AI/OpenSpec",
+      "source_path": "skills/openspec-verify-change",
+      "profile": "skills",
+      "changes": [
+        "local OpenSpec launcher; no stores or online update"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": []
+    },
+    {
+      "name": "planning-with-files",
+      "repo": "OthmanAdi/planning-with-files",
+      "source_path": "skills/planning-with-files",
+      "profile": "alternatives",
+      "changes": [
+        "removed host hooks; manual local file recovery"
+      ],
+      "format_valid": true,
+      "before_findings": [],
+      "after_findings": [
+        {
+          "file": "reference.md",
+          "line": 218,
+          "category": "inert-source-link",
+          "text": "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus",
+          "disposition": "source-only; do not fetch"
+        }
+      ]
+    }
+  ],
+  "runtime": [
+    {
+      "file": "runtime/browser_guard.py",
+      "line": 22,
+      "category": "network-api-review",
+      "text": "context.route('**/*',handle)",
+      "disposition": "reviewed: Route handlers continue HTTP and forward WebSocket only for local_url; external requests abort or remain unforwarded. Existing browser only, no browser download. Not browser-process/OS isolation."
+    },
+    {
+      "file": "runtime/browser_guard.py",
+      "line": 30,
+      "category": "network-api-review",
+      "text": "context.route_web_socket('**/*',websocket)",
+      "disposition": "reviewed: Route handlers continue HTTP and forward WebSocket only for local_url; external requests abort or remain unforwarded. Existing browser only, no browser download. Not browser-process/OS isolation."
+    },
+    {
+      "file": "tools/local_with_server.py",
+      "line": 53,
+      "category": "network-api-review",
+      "text": "with socket.create_connection(('127.0.0.1',port),timeout=.2):break",
+      "disposition": "reviewed: Same reviewed helper as copied skill: loopback readiness, no shell, checked Python flags, guarded subprocess environment."
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Static patterns do not prove absence of dynamically constructed requests.",
+    "Native OpenSpec and vendored Python/Node libraries retain network-capable code.",
+    "Only documented launch paths are approved; this is not an OS firewall."
+  ]
+}

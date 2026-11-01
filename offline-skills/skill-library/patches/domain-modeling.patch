@@ -1,0 +1,30 @@
+--- upstream\mattpocock--skills\skills\engineering\domain-modeling\agents\openai.yaml
++++ skills\domain-modeling\agents\openai.yaml
+@@ -1,3 +1,3 @@
+ interface:
+-  display_name: "Domain Modeling"
+-  short_description: "Build and sharpen a domain model"
++  display_name: Domain Modeling
++  short_description: Build and sharpen a domain model
+--- upstream\mattpocock--skills\skills\engineering\domain-modeling\SKILL.md
++++ skills\domain-modeling\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: domain-modeling
+-description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a GLOSSARY.md, or recording or editing an ADR.
++description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a GLOSSARY.md,
++  or recording or editing an ADR.
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Domain Modeling
+ 

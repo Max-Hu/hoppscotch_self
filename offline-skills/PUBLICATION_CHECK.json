@@ -1,0 +1,32 @@
+{
+  "edition": "offline-skills r2 source distribution",
+  "target_directory": "offline-skills/",
+  "entrypoints": 40,
+  "static_audit_unresolved": 0,
+  "behavior_tests": {
+    "tests_run": 14,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 10.984,
+    "python": "3.12.14",
+    "platform": "win32",
+    "scope": "Windows local smoke checks; no Linux execution, OS packet capture, or full agent-behavior proof"
+  },
+  "runtime_restore": {
+    "files": 906,
+    "from_local_archive_only": true,
+    "repeat_restore_idempotent": true,
+    "wrong_archive_rejected": true,
+    "payload_committed_to_git": false
+  },
+  "excluded": [
+    "original upstream archives",
+    "online preparation/download tools",
+    "old skill editions",
+    "runtime binaries and downloaded dependencies",
+    "business configurations and secrets"
+  ],
+  "scope": "Source distribution and Windows local checks; no OS-wide zero-egress claim or Linux execution proof"
+}

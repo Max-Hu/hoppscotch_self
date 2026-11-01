@@ -1,0 +1,7 @@
+{
+  "playwright-cli": {
+    "source": "upstream/openai--skills/skills/.curated/playwright",
+    "status": "source-only; excluded from approved runtime",
+    "reason": "Preinstalled CLI not bundled or tested; direct wrapper lacks external-request interception; public navigation examples remained in first edition. Use guarded Python webapp-testing."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "tests_run": 14,
+  "successful": true,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 10.984,
+  "python": "3.12.14",
+  "platform": "win32",
+  "scope": "Windows local smoke checks; no Linux execution, OS packet capture, or full agent-behavior proof"
+}

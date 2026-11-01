@@ -1,0 +1,43 @@
+--- upstream\wshobson--agents\plugins\developer-essentials\skills\code-review-excellence\SKILL.md
++++ skills\code-review-excellence\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: code-review-excellence
+-description: Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge sharing while maintaining team morale. Use when reviewing pull requests, establishing review standards, or mentoring developers.
++description: Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge
++  sharing while maintaining team morale. Use when reviewing pull requests, establishing review standards, or mentoring developers.
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Code Review Excellence
+ 
+@@ -89,9 +100,9 @@
+ ```markdown
+ Before diving into code, understand:
+ 
+-1. Read PR description and linked issue
++1. Read the local change description, specification and diff
+ 2. Check PR size (>400 lines? Ask to split)
+-3. Review CI/CD status (tests passing?)
++3. Review available local test results (do not query remote CI)
+ 4. Understand the business requirement
+ 5. Note any relevant architectural decisions
+ ```
+@@ -215,7 +226,7 @@
+ 1. **Review Promptly**: Within 24 hours, ideally same day
+ 2. **Limit PR Size**: 200-400 lines max for effective review
+ 3. **Review in Time Blocks**: 60 minutes max, take breaks
+-4. **Use Review Tools**: GitHub, GitLab, or dedicated tools
++4. **Use Review Tools**: local Git diffs and local reports
+ 5. **Automate What You Can**: Linters, formatters, security scans
+ 6. **Build Rapport**: Emoji, praise, and empathy matter
+ 7. **Be Available**: Offer to pair on complex issues

@@ -1,0 +1,148 @@
+{
+  "sources": [
+    {
+      "repo": "Fission-AI/OpenSpec",
+      "commit": "27c0515724decc633818c735ee596481eec78a8b",
+      "commit_date": "2026-10-30T23:30:00Z",
+      "archive_url": "https://codeload.github.com/Fission-AI/OpenSpec/zip/27c0515724decc633818c735ee596481eec78a8b",
+      "archive": "archives\\Fission-AI--OpenSpec-27c0515724decc633818c735ee596481eec78a8b.zip",
+      "archive_sha256": "858f2f138ca47e5ef407d1b2bd5a57af5420352e8cd7cbdf91f05bcc79e897ba",
+      "source_directory": "upstream\\Fission-AI--OpenSpec",
+      "files": 1312,
+      "download_bytes": 3986771
+    },
+    {
+      "repo": "OthmanAdi/planning-with-files",
+      "commit": "b6580cd24af1d8a95ab268794456e05608a1afd3",
+      "commit_date": "2026-10-30T20:33:32Z",
+      "archive_url": "https://codeload.github.com/OthmanAdi/planning-with-files/zip/b6580cd24af1d8a95ab268794456e05608a1afd3",
+      "archive": "archives\\OthmanAdi--planning-with-files-b6580cd24af1d8a95ab268794456e05608a1afd3.zip",
+      "archive_sha256": "7896ea8eadd3bd5c430817795c3c904c75971b1e85e19fd3926519e7dfd9e123",
+      "source_directory": "upstream\\OthmanAdi--planning-with-files",
+      "files": 789,
+      "download_bytes": 25389478
+    },
+    {
+      "repo": "anthropics/skills",
+      "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+      "commit_date": "2026-10-28T19:20:38Z",
+      "archive_url": "https://codeload.github.com/anthropics/skills/zip/ca45fc496a3436251f191354091d557da31c15b5",
+      "archive": "archives\\anthropics--skills-ca45fc496a3436251f191354091d557da31c15b5.zip",
+      "archive_sha256": "25fec008c68956c3bc197e43072acf1b00c8281ecd2883f82acc94ae8ebb5774",
+      "source_directory": "upstream\\anthropics--skills",
+      "files": 446,
+      "download_bytes": 4356522
+    },
+    {
+      "repo": "damusix/skills",
+      "commit": "efa8de4096f167cc896af6b869412def1614ccf0",
+      "commit_date": "2026-10-21T15:35:32Z",
+      "archive_url": "https://codeload.github.com/damusix/skills/zip/efa8de4096f167cc896af6b869412def1614ccf0",
+      "archive": "archives\\damusix--skills-efa8de4096f167cc896af6b869412def1614ccf0.zip",
+      "archive_sha256": "62b11d3857848e8a434213b9c2a21d61bf616438abc00e9305b5004187aeb126",
+      "source_directory": "upstream\\damusix--skills",
+      "files": 466,
+      "download_bytes": 3229281
+    },
+    {
+      "repo": "github/spec-kit",
+      "commit": "7370e592f3cd9c06e5b698983957e227c75b30e2",
+      "commit_date": "2026-10-30T16:10:26Z",
+      "archive_url": "https://codeload.github.com/github/spec-kit/zip/7370e592f3cd9c06e5b698983957e227c75b30e2",
+      "archive": "archives\\github--spec-kit-7370e592f3cd9c06e5b698983957e227c75b30e2.zip",
+      "archive_sha256": "6c6dbabbce600a4d3eacc7b9f6c7eb39117e9f549c51c9198abe5c82b47c03e6",
+      "source_directory": "upstream\\github--spec-kit",
+      "files": 1007,
+      "download_bytes": 5977343
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d",
+      "commit_date": "2026-10-31T14:23:30Z",
+      "archive_url": "https://codeload.github.com/mattpocock/skills/zip/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d",
+      "archive": "archives\\mattpocock--skills-4ae2317ddb22b046e26455e4f9c9b3aaaf62212d.zip",
+      "archive_sha256": "05a6d96644897c9895c9d1bf493341f6d8f600dd56552f9cde81fd6aa956452d",
+      "source_directory": "upstream\\mattpocock--skills",
+      "files": 183,
+      "download_bytes": 401687
+    },
+    {
+      "repo": "obra/superpowers",
+      "commit": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "commit_date": "2026-10-21T21:00:49Z",
+      "archive_url": "https://codeload.github.com/obra/superpowers/zip/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "archive": "archives\\obra--superpowers-2ce8aa15d05bd57213e6f746f953aafb7ded7a8b.zip",
+      "archive_sha256": "e82e5293d5609dd5214c2f0cadd9aab6cc059800b245865a2c892b252a5beee3",
+      "source_directory": "upstream\\obra--superpowers",
+      "files": 231,
+      "download_bytes": 676995
+    },
+    {
+      "repo": "openai/skills",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "commit_date": "2026-06-24T02:36:12Z",
+      "archive_url": "https://codeload.github.com/openai/skills/zip/49f948faa9258a0c61caceaf225e179651397431",
+      "archive": "archives\\openai--skills-49f948faa9258a0c61caceaf225e179651397431.zip",
+      "archive_sha256": "0bdf4c58d334509076ff62d92dbe38fc5e44bcdc1d21b27cc500cccc9ec3bfe0",
+      "source_directory": "upstream\\openai--skills",
+      "files": 783,
+      "download_bytes": 2027765
+    },
+    {
+      "repo": "supabase/agent-skills",
+      "commit": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "commit_date": "2026-10-02T12:34:48Z",
+      "archive_url": "https://codeload.github.com/supabase/agent-skills/zip/c9be0e931b7930f7d02126d04774d904c381e7d7",
+      "archive": "archives\\supabase--agent-skills-c9be0e931b7930f7d02126d04774d904c381e7d7.zip",
+      "archive_sha256": "023c2077c5a6f942534a27bf071d24412a834141c4bd87e010c54ba4eaa94674",
+      "source_directory": "upstream\\supabase--agent-skills",
+      "files": 60,
+      "download_bytes": 141892
+    },
+    {
+      "repo": "trailofbits/skills",
+      "commit": "2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+      "commit_date": "2026-10-28T18:38:54Z",
+      "archive_url": "https://codeload.github.com/trailofbits/skills/zip/2be6433b39e009cd2b6fd3be1895f6b1faa5af9a",
+      "archive": "archives\\trailofbits--skills-2be6433b39e009cd2b6fd3be1895f6b1faa5af9a.zip",
+      "archive_sha256": "f8f720b4be6bce5386472f1493497ddb2741430247edefe6c6b03094906d869d",
+      "source_directory": "upstream\\trailofbits--skills",
+      "files": 1596,
+      "download_bytes": 4082027
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "commit_date": "2026-10-27T21:40:02Z",
+      "archive_url": "https://codeload.github.com/vercel-labs/agent-skills/zip/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "archive": "archives\\vercel-labs--agent-skills-1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62.zip",
+      "archive_sha256": "498282b0928d0a56b58f12defba6118ce05d0069f9f21a90478ace352fac7657",
+      "source_directory": "upstream\\vercel-labs--agent-skills",
+      "files": 443,
+      "download_bytes": 1078048
+    },
+    {
+      "repo": "vercel-labs/web-interface-guidelines",
+      "commit": "434b7f91364665f2f733b310ec54809bf8f37937",
+      "commit_date": "2026-10-05T20:49:16Z",
+      "archive_url": "https://codeload.github.com/vercel-labs/web-interface-guidelines/zip/434b7f91364665f2f733b310ec54809bf8f37937",
+      "archive": "archives\\vercel-labs--web-interface-guidelines-434b7f91364665f2f733b310ec54809bf8f37937.zip",
+      "archive_sha256": "7cc87b3a17daa797f790be15bd9e38406f2b69cb8c30cbae9a0605b2f01c15c6",
+      "source_directory": "upstream\\vercel-labs--web-interface-guidelines",
+      "files": 5,
+      "download_bytes": 20053
+    },
+    {
+      "repo": "wshobson/agents",
+      "commit": "7e2fb559cf4b824b27f1fec49fe88f7511066d26",
+      "commit_date": "2026-10-30T23:34:46Z",
+      "archive_url": "https://codeload.github.com/wshobson/agents/zip/7e2fb559cf4b824b27f1fec49fe88f7511066d26",
+      "archive": "archives\\wshobson--agents-7e2fb559cf4b824b27f1fec49fe88f7511066d26.zip",
+      "archive_sha256": "e1ebfc826f6d19f503d56844dd5726881c8725edf25246eab3a4d9c714ab1f06",
+      "source_directory": "upstream\\wshobson--agents",
+      "files": 1171,
+      "download_bytes": 3400943
+    }
+  ],
+  "errors": []
+}

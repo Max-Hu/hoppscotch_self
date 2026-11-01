@@ -1,0 +1,50 @@
+{
+  "skills/brainstorming/scripts/helper.js": {
+    "sha256": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
+    "reason": "WebSocket URL is constructed from window.location.host; server only binds loopback and CSP permits same-origin connections."
+  },
+  "skills/async-python-patterns/references/details.md": {
+    "sha256": "ad6cfc4c74330af257d4dfd52b79c8db9a1a1809d61b41e416b214be615606f1",
+    "reason": "Illustrative HTTP clients: concrete endpoints now loopback mocks; variable URL snippets must run under offline_python.py and be given local mocks. Not an endpoint validator."
+  },
+  "skills/python-testing-patterns/references/details.md": {
+    "sha256": "0f7a2cc42166ef2277e7549e91e074114e548cf157f75be94b7b450969c538d5",
+    "reason": "requests calls are API-client examples; tests patch requests.get/post and concrete base URLs now use loopback. Run any adapted tests with offline_python.py."
+  },
+  "skills/code-review-excellence/references/review-patterns.md": {
+    "sha256": "c3841a3a0e0a21103de5e3ad23d073b565e87b8f54b07b2b56db23c8c94040c6",
+    "reason": "Browser fetch examples use relative /api/users paths, resolved against the designated local application."
+  },
+  "skills/webapp-testing/examples/console_logging.py": {
+    "sha256": "ff6f92b54ede4d46c0371451cf407583e27818e89e8f575e7db3c5a6492f99c5",
+    "reason": "Localhost page only; launch_local_browser plus service_workers=block and protect_context installed before navigation."
+  },
+  "skills/webapp-testing/examples/element_discovery.py": {
+    "sha256": "abbb0517a30ebe75e16d40056e344e5a24c2cfbc03c6237c5556d560741b0e58",
+    "reason": "Localhost page only; launch_local_browser plus service_workers=block and protect_context installed before navigation."
+  },
+  "skills/webapp-testing/examples/static_html_automation.py": {
+    "sha256": "8c3bae3f495eb7c44737a458597de83cb44c69926ba2d8466f58f272b9a9e343",
+    "reason": "Local file page; launch_local_browser plus service_workers=block and protect_context installed before navigation."
+  },
+  "skills/webapp-testing/scripts/with_server.py": {
+    "sha256": "7ca65867208347fefef27d71d4e336027367263c85130e8406e9d2b9a7a5269c",
+    "reason": "Readiness probes explicitly connect 127.0.0.1. Python commands receive guarded environment and checked interpreter flags. Not an arbitrary-subprocess sandbox."
+  },
+  "skills/webapp-testing/SKILL.md": {
+    "sha256": "dfe83cf282daefcb30a7fe0603cdc70606592e4fe6e26503d7b3a4056d7f6ab5",
+    "reason": "Example navigates localhost with guarded browser context; helper examples now use local Python commands, no shell/npm startup."
+  },
+  "skills/htmx/references/events-api.md": {
+    "sha256": "e84e7641b5e82f608602033eb18a379ae376dc1e2aad8c70fdbbf02a4442a0b9",
+    "reason": "EventSource and WebSocket factories validate same-origin targets. Application must be served at designated loopback origin. Examples do not authorize remote service use."
+  },
+  "runtime/browser_guard.py": {
+    "sha256": "6ed27235a502eece0249e28322eababadee0e0fac20000e06c157b2b8240a342",
+    "reason": "Route handlers continue HTTP and forward WebSocket only for local_url; external requests abort or remain unforwarded. Existing browser only, no browser download. Not browser-process/OS isolation."
+  },
+  "tools/local_with_server.py": {
+    "sha256": "7ca65867208347fefef27d71d4e336027367263c85130e8406e9d2b9a7a5269c",
+    "reason": "Same reviewed helper as copied skill: loopback readiness, no shell, checked Python flags, guarded subprocess environment."
+  }
+}

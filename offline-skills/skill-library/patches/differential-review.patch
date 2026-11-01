@@ -1,0 +1,97 @@
+--- upstream\trailofbits--skills\plugins\differential-review\skills\differential-review\adversarial.md
++++ skills\differential-review\adversarial.md
+@@ -201,3 +201,7 @@
+ ---
+ 
+ **Next:** Document all findings in final report (see [reporting.md](reporting.md))
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.
+--- upstream\trailofbits--skills\plugins\differential-review\skills\differential-review\agents\openai.yaml
++++ skills\differential-review\agents\openai.yaml
+@@ -1,6 +1,6 @@
+ interface:
+-  display_name: "Differential Review"
+-  short_description: "Review code changes for security regressions and impact"
+-  icon_small: "assets/trail-of-bits-mark.svg"
+-  icon_large: "assets/trail-of-bits-mark.svg"
+-  brand_color: "#D83A34"
++  display_name: Differential Review
++  short_description: Review code changes for security regressions and impact
++  icon_small: assets/trail-of-bits-mark.svg
++  icon_large: assets/trail-of-bits-mark.svg
++  brand_color: '#D83A34'
+--- upstream\trailofbits--skills\plugins\differential-review\skills\differential-review\methodology.md
++++ skills\differential-review\methodology.md
+@@ -52,7 +52,7 @@
+ git log <base>..<head> --oneline
+ 
+ # For PR
+-gh pr view <number> --json files,additions,deletions
++# Offline: remote operation omitted; inspect local Git state instead.
+ 
+ # Get all changed files
+ git diff <base>..<head> --name-only
+@@ -232,3 +232,7 @@
+ **Next steps:**
+ - For HIGH RISK changes, proceed to [adversarial.md](adversarial.md)
+ - For report generation, see [reporting.md](reporting.md)
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.
+--- upstream\trailofbits--skills\plugins\differential-review\skills\differential-review\patterns.md
++++ skills\differential-review\patterns.md
+@@ -298,3 +298,7 @@
+ 
+ **For detailed analysis workflow, see [methodology.md](methodology.md)**
+ **For building exploit scenarios, see [adversarial.md](adversarial.md)**
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.
+--- upstream\trailofbits--skills\plugins\differential-review\skills\differential-review\reporting.md
++++ skills\differential-review\reporting.md
+@@ -367,3 +367,7 @@
+ 4. Notify user to save manually
+ 
+ **Always prioritize persistent artifact generation over ephemeral chat output.**
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.
+--- upstream\trailofbits--skills\plugins\differential-review\skills\differential-review\SKILL.md
++++ skills\differential-review\SKILL.md
+@@ -1,8 +1,20 @@
+ ---
+ name: differential-review
+-description: "Performs security-focused differential review of code changes. Adapts analysis depth to codebase size, uses git blame for context, calculates blast radius by counting callers, checks test coverage of modified code, and generates a markdown report. Use when reviewing a PR, commit, or diff for security vulnerabilities, checking whether a change re-introduces a previously fixed bug, asking what else a change could break, or finding which modified code has no test covering it."
+-allowed-tools: Read Write Grep Glob Bash
+----
++description: Performs security-focused differential review of code changes. Adapts analysis depth to codebase size, uses git
++  blame for context, calculates blast radius by counting callers, checks test coverage of modified code, and generates a markdown
++  report. Use when reviewing a PR, commit, or diff for security vulnerabilities, checking whether a change re-introduces a
++  previously fixed bug, asking what else a change could break, or finding which modified code has no test covering it.
++---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Differential Security Review
+ 
+@@ -223,3 +235,7 @@
+ **For first-time users:** Start with [methodology.md](methodology.md) to understand the complete workflow.
+ 
+ **For experienced users:** Use this page's Quick Reference and Decision Tree to navigate directly to needed content.
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.

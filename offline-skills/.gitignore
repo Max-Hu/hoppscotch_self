@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.hypothesis/
+skill-library/state/
+skill-library/tests/workspaces/
+skill-library/upstream/
+skill-library/archives/
+skill-library/runtime/downloads/
+skill-library/runtime/openspec/
+skill-library/runtime/python-windows/
+skill-library/runtime/python-linux/
+*.zip
+.env

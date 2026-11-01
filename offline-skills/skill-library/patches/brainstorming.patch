@@ -1,0 +1,109 @@
+--- upstream\obra--superpowers\skills\brainstorming\scripts\server.cjs
++++ skills\brainstorming\scripts\server.cjs
+@@ -98,18 +98,13 @@
+ }
+ let PORT = preferredPort();
+ const HOST = process.env.BRAINSTORM_HOST || '127.0.0.1';
++if (!['127.0.0.1', '::1', 'localhost'].includes(HOST)) throw new Error('Offline companion requires loopback binding');
+ const URL_HOST = process.env.BRAINSTORM_URL_HOST || (HOST === '127.0.0.1' ? 'localhost' : HOST);
++if (!['127.0.0.1', '::1', 'localhost'].includes(URL_HOST)) throw new Error('Offline companion requires loopback URL host');
+ const SESSION_DIR = process.env.BRAINSTORM_DIR || '/tmp/brainstorm';
+ const CONTENT_DIR = path.join(SESSION_DIR, 'content');
+ const STATE_DIR = path.join(SESSION_DIR, 'state');
+ const SUPERPOWERS_VERSION = readSuperpowersVersion();
+-const SUPERPOWERS_BRAND_IMAGE_URL = 'https://primeradiant.com/brand/superpowers-visual-brainstorming-logo.png';
+-const TELEMETRY_DISABLE_ENV_VARS = [
+-  'SUPERPOWERS_DISABLE_TELEMETRY',
+-  'DISABLE_TELEMETRY',
+-  'CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC'
+-];
+-const SUPERPOWERS_TELEMETRY_DISABLED = TELEMETRY_DISABLE_ENV_VARS.some(name => isTruthyEnv(process.env[name]));
+ let ownerPid = process.env.BRAINSTORM_OWNER_PID ? Number(process.env.BRAINSTORM_OWNER_PID) : null;
+ 
+ // Per-session secret key. The companion is reachable by any local browser tab
+@@ -240,15 +235,7 @@
+ }
+ 
+ function brandMarkup() {
+-  const version = escapeHtmlText(SUPERPOWERS_VERSION);
+-  const text = SUPERPOWERS_TELEMETRY_DISABLED
+-    ? 'Prime Radiant Superpowers v' + version
+-    : 'Superpowers v' + version;
+-  const logo = SUPERPOWERS_TELEMETRY_DISABLED
+-    ? ''
+-    : '<img class="brand-logo" src="' + SUPERPOWERS_BRAND_IMAGE_URL + '?v=' + encodeURIComponent(SUPERPOWERS_VERSION) + '" alt="Prime Radiant" referrerpolicy="no-referrer" decoding="async">';
+-
+-  return '<div class="brand"><a href="https://github.com/obra/superpowers">' + logo + '<span class="brand-copy">' + text + '</span></a></div>';
++  return '<div class="brand"><span class="brand-copy">Superpowers v' + escapeHtmlText(SUPERPOWERS_VERSION) + '</span></div>';
+ }
+ 
+ function renderBranding(html) {
+@@ -368,7 +355,7 @@
+     'Referrer-Policy': 'no-referrer',
+     'Cache-Control': 'no-store',
+     'X-Frame-Options': 'DENY',
+-    'Content-Security-Policy': "frame-ancestors 'none'",
++    'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+     'Cross-Origin-Resource-Policy': 'same-origin',
+     ...headers
+   };
+--- upstream\obra--superpowers\skills\brainstorming\SKILL.md
++++ skills\brainstorming\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: brainstorming
+-description: "You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation)."
++description: You MUST use this before any creative work - creating features, building components, adding functionality, modifying
++  behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Brainstorming
+ 
+@@ -29,7 +40,7 @@
+    human partner pick one (see Lay out the approaches).
+ 2. Write the design doc, short or full (see Size the Work).
+ 3. Get their approval of that doc.
+-4. Invoke the superpowers:writing-plans skill.
++4. Invoke the writing-plans skill.
+ 
+ Two things aren't implementing: a spike they said yes to (see Spike to
+ feel things out), and doing what they asked once they've opted out of
+@@ -257,7 +268,7 @@
+ that comes back through this gate.
+ 
+ After the design doc is approved, the next step is the plan: invoke
+-superpowers:writing-plans and no other skill.
++writing-plans and no other skill.
+ </HARD-GATE>
+ 
+ ## Red Flags
+--- upstream\obra--superpowers\skills\brainstorming\visual-companion.md
++++ skills\brainstorming\visual-companion.md
+@@ -92,16 +92,7 @@
+ 
+ **Other environments:** The server must keep running in the background across conversation turns. If your environment reaps detached processes, use `--foreground` and launch the command with your platform's background execution mechanism.
+ 
+-If the URL is unreachable from your browser (common in remote/containerized setups), bind a non-loopback host:
+-
+-```bash
+-bash scripts/start-server.sh \
+-  --project-dir /path/to/project \
+-  --host 0.0.0.0 \
+-  --url-host localhost
+-```
+-
+-Use `--url-host` to control what hostname is printed in the returned URL JSON.
++This offline edition accepts loopback hosts only. Do not use tunnels or expose the companion on another interface. HTML screens must use local assets; its CSP restricts resource loading to the same origin.
+ 
+ ## The Loop
+ 

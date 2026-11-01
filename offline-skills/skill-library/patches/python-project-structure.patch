@@ -1,0 +1,22 @@
+--- upstream\wshobson--agents\plugins\python-development\skills\python-project-structure\SKILL.md
++++ skills\python-project-structure\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: python-project-structure
+-description: Python project organization, module architecture, and public API design. Use when setting up new projects, organizing modules, defining public interfaces with __all__, or planning directory layouts.
++description: Python project organization, module architecture, and public API design. Use when setting up new projects, organizing
++  modules, defining public interfaces with __all__, or planning directory layouts.
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Python Project Structure & Module Architecture
+ 

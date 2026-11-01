@@ -1,0 +1,21 @@
+{
+  "openspec_version": "v1.16.0",
+  "assets": [
+    {
+      "name": "openspec-linux-x64.tar.gz",
+      "url": "https://github.com/Fission-AI/OpenSpec/releases/download/v1.16.0/openspec-linux-x64.tar.gz",
+      "sha256": "f27fb2ff5c6c4aafb207cb0b797189215adb3a1150d4b4600a2d6a0b6e192ae1"
+    },
+    {
+      "name": "openspec-windows-x64.zip",
+      "url": "https://github.com/Fission-AI/OpenSpec/releases/download/v1.16.0/openspec-windows-x64.zip",
+      "sha256": "da1685e290857f10503f02995973078df681ec3a2f859c83b6b4d3b6261b3062"
+    },
+    {
+      "name": "PyYAML source (pure Python validation only)",
+      "version": "6.0.3",
+      "sha256": "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f",
+      "url": "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    }
+  ]
+}

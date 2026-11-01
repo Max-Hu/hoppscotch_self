@@ -1,0 +1,37 @@
+--- upstream\obra--superpowers\skills\requesting-code-review\code-reviewer.md
++++ skills\requesting-code-review\code-reviewer.md
+@@ -196,3 +196,7 @@
+ 
+ **Reasoning:** Core implementation is solid with good architecture and tests. Important issues (help text, date validation) are easily fixed and don't affect core functionality.
+ ```
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.
+--- upstream\obra--superpowers\skills\requesting-code-review\SKILL.md
++++ skills\requesting-code-review\SKILL.md
+@@ -2,6 +2,16 @@
+ name: requesting-code-review
+ description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Requesting Code Review
+ 
+@@ -93,3 +103,7 @@
+ - Request clarification
+ 
+ See template at: [code-reviewer.md](code-reviewer.md)
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.

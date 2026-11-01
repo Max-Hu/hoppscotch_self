@@ -1,0 +1,342 @@
+[
+  {
+    "name": "writing-plans",
+    "repo": "obra/superpowers",
+    "source_path": "skills/writing-plans",
+    "profile": "skills",
+    "changes": [
+      "flattened host-specific skill names",
+      "single-session local handoff; preserve existing authorization"
+    ]
+  },
+  {
+    "name": "systematic-debugging",
+    "repo": "obra/superpowers",
+    "source_path": "skills/systematic-debugging",
+    "profile": "skills",
+    "changes": [
+      "flattened host-specific skill names"
+    ]
+  },
+  {
+    "name": "verification-before-completion",
+    "repo": "obra/superpowers",
+    "source_path": "skills/verification-before-completion",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "executing-plans",
+    "repo": "obra/superpowers",
+    "source_path": "skills/executing-plans",
+    "profile": "skills",
+    "changes": [
+      "flattened host-specific skill names"
+    ]
+  },
+  {
+    "name": "test-driven-development",
+    "repo": "obra/superpowers",
+    "source_path": "skills/test-driven-development",
+    "profile": "skills",
+    "changes": [
+      "flattened host-specific skill names"
+    ]
+  },
+  {
+    "name": "receiving-code-review",
+    "repo": "obra/superpowers",
+    "source_path": "skills/receiving-code-review",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "requesting-code-review",
+    "repo": "obra/superpowers",
+    "source_path": "skills/requesting-code-review",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "using-git-worktrees",
+    "repo": "obra/superpowers",
+    "source_path": "skills/using-git-worktrees",
+    "profile": "skills",
+    "changes": [
+      "removed automatic dependency provisioning"
+    ]
+  },
+  {
+    "name": "finishing-a-development-branch",
+    "repo": "obra/superpowers",
+    "source_path": "skills/finishing-a-development-branch",
+    "profile": "skills",
+    "changes": [
+      "removed remote Git/GitHub command",
+      "removed remote publish/PR menu"
+    ]
+  },
+  {
+    "name": "brainstorming",
+    "repo": "obra/superpowers",
+    "source_path": "skills/brainstorming",
+    "profile": "skills",
+    "changes": [
+      "flattened host-specific skill names",
+      "removed remote branding image and external link; loopback-only companion with CSP"
+    ]
+  },
+  {
+    "name": "using-superpowers",
+    "repo": "obra/superpowers",
+    "source_path": "skills/using-superpowers",
+    "profile": "skills",
+    "changes": [
+      "flattened host-specific skill names",
+      "removed online host-tool mappings and App publication fallback"
+    ]
+  },
+  {
+    "name": "python-design-patterns",
+    "repo": "wshobson/agents",
+    "source_path": "plugins/python-development/skills/python-design-patterns",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "async-python-patterns",
+    "repo": "wshobson/agents",
+    "source_path": "plugins/python-development/skills/async-python-patterns",
+    "profile": "skills",
+    "changes": [
+      "HTTP examples target local mocks only"
+    ]
+  },
+  {
+    "name": "python-testing-patterns",
+    "repo": "wshobson/agents",
+    "source_path": "plugins/python-development/skills/python-testing-patterns",
+    "profile": "skills",
+    "changes": [
+      "HTTP examples target local mocks only"
+    ]
+  },
+  {
+    "name": "python-project-structure",
+    "repo": "wshobson/agents",
+    "source_path": "plugins/python-development/skills/python-project-structure",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "code-review-excellence",
+    "repo": "wshobson/agents",
+    "source_path": "plugins/developer-essentials/skills/code-review-excellence",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "supabase-postgres-best-practices",
+    "repo": "supabase/agent-skills",
+    "source_path": "skills/supabase-postgres-best-practices",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "webapp-testing",
+    "repo": "anthropics/skills",
+    "source_path": "skills/webapp-testing",
+    "profile": "skills",
+    "changes": [
+      "local browser prerequisites and UI-state waits"
+    ]
+  },
+  {
+    "name": "frontend-design",
+    "repo": "anthropics/skills",
+    "source_path": "skills/frontend-design",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "improve-codebase-architecture",
+    "repo": "mattpocock/skills",
+    "source_path": "skills/engineering/improve-codebase-architecture",
+    "profile": "skills",
+    "changes": [
+      "removed report CDNs"
+    ]
+  },
+  {
+    "name": "codebase-design",
+    "repo": "mattpocock/skills",
+    "source_path": "skills/engineering/codebase-design",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "domain-modeling",
+    "repo": "mattpocock/skills",
+    "source_path": "skills/engineering/domain-modeling",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "grilling",
+    "repo": "mattpocock/skills",
+    "source_path": "skills/productivity/grilling",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "differential-review",
+    "repo": "trailofbits/skills",
+    "source_path": "plugins/differential-review/skills/differential-review",
+    "profile": "skills",
+    "changes": [
+      "removed remote Git/GitHub command"
+    ]
+  },
+  {
+    "name": "property-based-testing",
+    "repo": "trailofbits/skills",
+    "source_path": "plugins/property-based-testing/skills/property-based-testing",
+    "profile": "skills",
+    "changes": []
+  },
+  {
+    "name": "htmx",
+    "repo": "damusix/skills",
+    "source_path": "htmx",
+    "profile": "skills",
+    "changes": [
+      "replaced CDN examples with local assets; removed online upgrade checker"
+    ]
+  },
+  {
+    "name": "web-design-guidelines",
+    "repo": "vercel-labs/agent-skills",
+    "source_path": "skills/web-design-guidelines",
+    "profile": "skills",
+    "changes": [
+      "vendored interface guidelines instead of WebFetch"
+    ]
+  },
+  {
+    "name": "openspec-apply-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-apply-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-archive-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-archive-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-bulk-archive-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-bulk-archive-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-continue-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-continue-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-explore",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-explore",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-ff-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-ff-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-new-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-new-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-onboard",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-onboard",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-propose",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-propose",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-sync-specs",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-sync-specs",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-update-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-update-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "openspec-verify-change",
+    "repo": "Fission-AI/OpenSpec",
+    "source_path": "skills/openspec-verify-change",
+    "profile": "skills",
+    "changes": [
+      "local OpenSpec launcher; no stores or online update"
+    ]
+  },
+  {
+    "name": "planning-with-files",
+    "repo": "OthmanAdi/planning-with-files",
+    "source_path": "skills/planning-with-files",
+    "profile": "alternatives",
+    "changes": [
+      "removed host hooks; manual local file recovery"
+    ]
+  }
+]

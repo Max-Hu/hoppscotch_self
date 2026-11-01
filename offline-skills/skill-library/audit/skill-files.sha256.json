@@ -1,0 +1,898 @@
+[
+  {
+    "path": "skills/writing-plans/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/writing-plans/SKILL.md",
+    "sha256": "472d0265e5b63544b1c3e95b04650733e6866ac09be14c5e5a614870b2fa66af"
+  },
+  {
+    "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+    "sha256": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e"
+  },
+  {
+    "path": "skills/systematic-debugging/condition-based-waiting.md",
+    "sha256": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26"
+  },
+  {
+    "path": "skills/systematic-debugging/CREATION-LOG.md",
+    "sha256": "c24733a5b1821bd6bed1fc950261f0b9f4e90097e0bbb96459d8179713730789"
+  },
+  {
+    "path": "skills/systematic-debugging/defense-in-depth.md",
+    "sha256": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7"
+  },
+  {
+    "path": "skills/systematic-debugging/find-polluter.sh",
+    "sha256": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c"
+  },
+  {
+    "path": "skills/systematic-debugging/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/systematic-debugging/root-cause-tracing.md",
+    "sha256": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8"
+  },
+  {
+    "path": "skills/systematic-debugging/SKILL.md",
+    "sha256": "e619d5ae1498c1ad6134fa0c8f3337fa79fd0b2b2b947c3ebab24cf76c15b63a"
+  },
+  {
+    "path": "skills/systematic-debugging/test-academic.md",
+    "sha256": "fe2ba480d78ac0d686dc025f41c2a32a43d642bf533f91b0c6053a04d35d6486"
+  },
+  {
+    "path": "skills/systematic-debugging/test-pressure-1.md",
+    "sha256": "0b6a915db0054577819834c79be9eb614e97bddba10d73768e1fbe91cfed048a"
+  },
+  {
+    "path": "skills/systematic-debugging/test-pressure-2.md",
+    "sha256": "b2030aeffba07050e8ad573ddf87486457c4a016a786bb326235bebd856f2016"
+  },
+  {
+    "path": "skills/systematic-debugging/test-pressure-3.md",
+    "sha256": "96b50a52e2c7989c9cf20fb752c47c1e9a3a70dc362f8f7989f8f5b64dac7708"
+  },
+  {
+    "path": "skills/verification-before-completion/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/verification-before-completion/SKILL.md",
+    "sha256": "e10f17f3d4652df2c5742da61b9a5e148ffa2f5c891bf1861c3e2de6279ff834"
+  },
+  {
+    "path": "skills/executing-plans/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/executing-plans/scripts/task-done",
+    "sha256": "d0d4f2397c85a4426443ea955e699ef12568b41b408ec6122d4ec2433ee3a5f6"
+  },
+  {
+    "path": "skills/executing-plans/scripts/task-start",
+    "sha256": "f833693c8fce3700fc9f841562d80f8015cd40f652c168a3405ac3e46947a1fe"
+  },
+  {
+    "path": "skills/executing-plans/SKILL.md",
+    "sha256": "00ee91214d67b6020e6877c2cc7699f7059d954bab05758e4d3ed51a045726bd"
+  },
+  {
+    "path": "skills/test-driven-development/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/test-driven-development/SKILL.md",
+    "sha256": "bcff2b7261256f797e215b52c171e9daa1bb4e3ad0416d33a215fa7b0ea4ce7b"
+  },
+  {
+    "path": "skills/test-driven-development/writing-good-tests.md",
+    "sha256": "03a6786a6c0c5d334f27778356d2aca478d10666feb2d3c7b6042d82344bddbf"
+  },
+  {
+    "path": "skills/receiving-code-review/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/receiving-code-review/SKILL.md",
+    "sha256": "00865098f0a4883e30ed5994fac531edf21d825593e058ff76b747fa59673b41"
+  },
+  {
+    "path": "skills/requesting-code-review/code-reviewer.md",
+    "sha256": "6ddfa3b4f848827644bc9cde8bc15ce314c694d0ffa57afada51f72753736b95"
+  },
+  {
+    "path": "skills/requesting-code-review/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/requesting-code-review/SKILL.md",
+    "sha256": "bf67f88da1dd6490ecd7cf94df79dd7b53c2f0b11d720095040bcd7f69dab1b7"
+  },
+  {
+    "path": "skills/using-git-worktrees/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/using-git-worktrees/SKILL.md",
+    "sha256": "d16eabdd4e2bbd8b48ee231e31d1d6ef6c3267dabc3a8e65611d6716a104e9f1"
+  },
+  {
+    "path": "skills/finishing-a-development-branch/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/finishing-a-development-branch/SKILL.md",
+    "sha256": "eac7a18a1f2710620526cc9cddbe98d2ebdac7a19e23218eb98518b35ac6e9f1"
+  },
+  {
+    "path": "skills/brainstorming/builder-check-prompt.md",
+    "sha256": "36d51a4723d6f0a3ce5811a0ea3b3a8424f07533947e1355f5d8cb8cce40c55e"
+  },
+  {
+    "path": "skills/brainstorming/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/brainstorming/scripts/frame-template.html",
+    "sha256": "6a8a4e58bd6a44b904e2e3c57de774481d909204597e1498de53f1b2fecc4c4e"
+  },
+  {
+    "path": "skills/brainstorming/scripts/helper.js",
+    "sha256": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3"
+  },
+  {
+    "path": "skills/brainstorming/scripts/server.cjs",
+    "sha256": "7a5c8605fc7943c34f599eff179b69d645c7ed842627c3db5f53ead88f33f9ea"
+  },
+  {
+    "path": "skills/brainstorming/scripts/start-server.sh",
+    "sha256": "a4e5ae84275bcaacd2f84345afeabe59cf7b00ba080e123da7cc1fb226f12847"
+  },
+  {
+    "path": "skills/brainstorming/scripts/stop-server.sh",
+    "sha256": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf"
+  },
+  {
+    "path": "skills/brainstorming/SKILL.md",
+    "sha256": "30682a92174fbbd8a7b65035d9f1b65a551de0a697b3375c0d3fa284b5bcf080"
+  },
+  {
+    "path": "skills/brainstorming/visual-companion.md",
+    "sha256": "9bda9151e53ba22244c56edc7d4ec6850f710ffa91e19155fa140dbb264ea853"
+  },
+  {
+    "path": "skills/using-superpowers/LICENSE",
+    "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+  },
+  {
+    "path": "skills/using-superpowers/references/antigravity-tools.md",
+    "sha256": "4880f6de3da4e32f9659ebe7a72b9e0ebfff04e028c2ed96173f86d0387a04c0"
+  },
+  {
+    "path": "skills/using-superpowers/references/claude-code-tools.md",
+    "sha256": "0c369ed56079d06b64fd75f73093152e990ba64e3a2d1b4e5cef27fd128a0025"
+  },
+  {
+    "path": "skills/using-superpowers/references/codex-tools.md",
+    "sha256": "332ea12b419a959b7d8cb0debf3228570b9bf21de3df03f621244ba3dc26974b"
+  },
+  {
+    "path": "skills/using-superpowers/references/gemini-tools.md",
+    "sha256": "9d7a8ea029718f48b06680a02aecb935212ff5b3fb18460f86b7ff15c17aecc4"
+  },
+  {
+    "path": "skills/using-superpowers/references/hermes-tools.md",
+    "sha256": "a5194046affe5ccbc730a634f4112ae78f1c703548f7820995257119942f5b5b"
+  },
+  {
+    "path": "skills/using-superpowers/references/muse-tools.md",
+    "sha256": "0628efb587fae32fe3da9146187b1a58d63bebf78b61e22bf8bbb192e1eeeec0"
+  },
+  {
+    "path": "skills/using-superpowers/references/pi-tools.md",
+    "sha256": "703dbc83d23ecab9c6f388460c38abc482e9dee2fe6772a8c7a255152ad3a4d5"
+  },
+  {
+    "path": "skills/using-superpowers/SKILL.md",
+    "sha256": "59072107330395ac14225300ea14bc3ebe10bd017a9ebe2de8464ff3dc53d122"
+  },
+  {
+    "path": "skills/python-design-patterns/LICENSE",
+    "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746"
+  },
+  {
+    "path": "skills/python-design-patterns/references/details.md",
+    "sha256": "5d85b7a1745446432060bb31ee1fa686d5a41d86cfaf3687dd2710b47b72e5ea"
+  },
+  {
+    "path": "skills/python-design-patterns/SKILL.md",
+    "sha256": "d190568efdff28b73b5d103fa35bcf878583a08f5cbf095718b114591e5e3f44"
+  },
+  {
+    "path": "skills/async-python-patterns/LICENSE",
+    "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746"
+  },
+  {
+    "path": "skills/async-python-patterns/references/details.md",
+    "sha256": "ad6cfc4c74330af257d4dfd52b79c8db9a1a1809d61b41e416b214be615606f1"
+  },
+  {
+    "path": "skills/async-python-patterns/SKILL.md",
+    "sha256": "5cafd8c8a9ff338f20a459de0af2a460f80e888118d25fca80d1d51886d31d19"
+  },
+  {
+    "path": "skills/python-testing-patterns/LICENSE",
+    "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746"
+  },
+  {
+    "path": "skills/python-testing-patterns/references/advanced-patterns.md",
+    "sha256": "02e568fa61fbc555e5dbbb735244ff03cf4535bcef36a08ec235d26309d6d41d"
+  },
+  {
+    "path": "skills/python-testing-patterns/references/details.md",
+    "sha256": "0f7a2cc42166ef2277e7549e91e074114e548cf157f75be94b7b450969c538d5"
+  },
+  {
+    "path": "skills/python-testing-patterns/SKILL.md",
+    "sha256": "d9acadc6b1d089a89c63ab9a038c1d48dcef949c388d79a6fb7f0796e178a6b6"
+  },
+  {
+    "path": "skills/python-project-structure/LICENSE",
+    "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746"
+  },
+  {
+    "path": "skills/python-project-structure/SKILL.md",
+    "sha256": "a7c2f9dfa45a9d0fa05d9ddf56a01b09e6798d98024bbfd9d19de08934c15fac"
+  },
+  {
+    "path": "skills/code-review-excellence/LICENSE",
+    "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746"
+  },
+  {
+    "path": "skills/code-review-excellence/references/review-patterns.md",
+    "sha256": "c3841a3a0e0a21103de5e3ad23d073b565e87b8f54b07b2b56db23c8c94040c6"
+  },
+  {
+    "path": "skills/code-review-excellence/references/review-techniques.md",
+    "sha256": "3a6486a255659ec98a4b88299a498a63e4a7d17395327d95d84b74d27b205f5e"
+  },
+  {
+    "path": "skills/code-review-excellence/SKILL.md",
+    "sha256": "fb060df6c18548a35d56d8878d23456c31f50db80ef7d0ec6c3e04e0df27a69f"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/CHANGELOG.md",
+    "sha256": "751ad110037c85d400018c9894716a04fa46357ff55c22b1169b280752e19e88"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/LICENSE",
+    "sha256": "b65e575eb4f04a13c187d64e958321298e2ab84d67aa8428819f362056ba292c"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/_contributing.md",
+    "sha256": "191e039e7d94764e6073410b513b559f9a594e0fdf0252a30c2a2986df2ab3bc"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/_sections.md",
+    "sha256": "c9e992612b422c7122de0b7542ebc2450db283edaab08cfe86c6d657fcccccd5"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/_template.md",
+    "sha256": "6299954250f212caabe339d752c3e5313a8e07d1a182a4e4b425baee91df1bd2"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/advanced-full-text-search.md",
+    "sha256": "40c2606bbb4c4dce31308f201b24cc7f58c7df05b1d9c6856fe2b888d3b7cf28"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md",
+    "sha256": "24cacf6a8bc35901dd566d24502ce8e57f810a5c196b897e61d52726e521d106"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/conn-idle-timeout.md",
+    "sha256": "630588902c00fcec59a5988cc5d042f76dcf2c923a535abfd8c47dca205eaed5"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/conn-limits.md",
+    "sha256": "11b2a67a7c7679cbbc5d807bbb17e69c98484a581d0c8b929c03408f412b81b2"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/conn-pooling.md",
+    "sha256": "88cf086bf98ba865d2e9d0579974e1366b14157619d6a93e7da77be91084e4a5"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/conn-prepared-statements.md",
+    "sha256": "174e9332fe3dda5c99b2b00159fb1915ae36c00bab3a7882c14e73e4344e946e"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/data-batch-inserts.md",
+    "sha256": "531933b82d6a622d0fae29e0ea80be6fe5d78655adf2804c271ea84a1930de37"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/data-n-plus-one.md",
+    "sha256": "21a44905e5b16a42741892ec34bb1bfef124d049b140a76934a9acd0f46f5fc2"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/data-pagination.md",
+    "sha256": "73c9fa10a3d439bedea0e11b640bd25bf30dd50f0d9006cf85baf7c3151543fa"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/data-upsert.md",
+    "sha256": "2612af83b20a2701dde30ef1f8d7efd26b7e9eef84717226b8f038a2d2150ff7"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/lock-advisory.md",
+    "sha256": "c88d259dbf81c3771438f59a165f7eab8acd09999dd370bdf807521c73f35aab"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md",
+    "sha256": "09aee46f51d7178c8e55fe056cd5a94a64ba2c122fe418e6900cd99f297b2347"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/lock-short-transactions.md",
+    "sha256": "5aa7f61095916986d39644b446cdbcd2bacca7ef698a3bb50b3f82dd60207602"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/lock-skip-locked.md",
+    "sha256": "6c45077f430f29cd9cd8f448c94d578e827e7bd023fcdaf717a756acb116fa4b"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md",
+    "sha256": "4cb67ffbf8e57f2e5b380b0beb4242528b513723ce314a2c2ffcf083bd4203d7"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md",
+    "sha256": "89dca99d4e894fcbdcac136be7ad9fbc03d1342904f065c1b198dc9cf495f098"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md",
+    "sha256": "2892272011710eb49b3f185ec12f15ce9ce4c365792c672f6e2a9c90da426a1a"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/query-composite-indexes.md",
+    "sha256": "73e42424e671f0266e74fdb220db3196790f69fb43e2b19c7b9483eb4971b554"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/query-covering-indexes.md",
+    "sha256": "daf2a7f0477fb7357b62b5fb5b185b1995a77a186347e45cb780e25e7a7589b6"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/query-index-types.md",
+    "sha256": "472a74f22c2df203bd0154999b3a5a0187cca2ab3d9a3978e305bb7c32f1a282"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/query-missing-indexes.md",
+    "sha256": "91ad8b0ff4365704b4830a7f077c6f140f7140fd5d3ce5cd0b92b160cf9e25f1"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/query-partial-indexes.md",
+    "sha256": "6448982bc8558c6555284958edc331b29239c6a0130e6b4501dd6d4da607a6dd"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/schema-constraints.md",
+    "sha256": "90e8efda3e9e81095e642911ad4aae2809d160f29414338fa997253238f510f8"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/schema-data-types.md",
+    "sha256": "e01b58c14c7f3f65d8ead580b9a4fcf70b83baaab0f9a5f83c569c9fd113e8c8"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md",
+    "sha256": "7587713d12a65a212365459b3d39e4717d8a79e4073b10bd62f1054d8192c0dd"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md",
+    "sha256": "4bc80f70865f2390872591f326c8a6be6456a0aeb5a7e5a2475d7cd9d43059ab"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/schema-partitioning.md",
+    "sha256": "541e13fbeaf4bb1485c9059d4c9417dbdb766cf16f4237cd63a04ada7ec45b90"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/schema-primary-keys.md",
+    "sha256": "3c8beabef82066f9a0838b926da0885117fd2d9a263aaf84cb5ca9e5f0d400e9"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/security-privileges.md",
+    "sha256": "095909274a4fb43df785d7144cf674eeb40284d2d45628f14af4108737b93663"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/security-rls-basics.md",
+    "sha256": "e04dd1a3a382aafdaaa73fe9f7976352acdde6e90c2a2470d281b94d4f44b096"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/references/security-rls-performance.md",
+    "sha256": "2e1faeca7d5746e246b1c78f9492fe2a9cfa41c4d7fa1e23c402d58fa18ea014"
+  },
+  {
+    "path": "skills/supabase-postgres-best-practices/SKILL.md",
+    "sha256": "1e1b322f2fcf20eda983e1735ead9ccdfe54ed883ff72ca2d7dd98d596f622f1"
+  },
+  {
+    "path": "skills/webapp-testing/examples/console_logging.py",
+    "sha256": "ff6f92b54ede4d46c0371451cf407583e27818e89e8f575e7db3c5a6492f99c5"
+  },
+  {
+    "path": "skills/webapp-testing/examples/element_discovery.py",
+    "sha256": "abbb0517a30ebe75e16d40056e344e5a24c2cfbc03c6237c5556d560741b0e58"
+  },
+  {
+    "path": "skills/webapp-testing/examples/static_html_automation.py",
+    "sha256": "8c3bae3f495eb7c44737a458597de83cb44c69926ba2d8466f58f272b9a9e343"
+  },
+  {
+    "path": "skills/webapp-testing/LICENSE.txt",
+    "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+  },
+  {
+    "path": "skills/webapp-testing/scripts/with_server.py",
+    "sha256": "7ca65867208347fefef27d71d4e336027367263c85130e8406e9d2b9a7a5269c"
+  },
+  {
+    "path": "skills/webapp-testing/SKILL.md",
+    "sha256": "dfe83cf282daefcb30a7fe0603cdc70606592e4fe6e26503d7b3a4056d7f6ab5"
+  },
+  {
+    "path": "skills/frontend-design/LICENSE.txt",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+  },
+  {
+    "path": "skills/frontend-design/SKILL.md",
+    "sha256": "97436c15d46f2426d1c1897f43905662547960c5861784b9a0f6188204da9cc1"
+  },
+  {
+    "path": "skills/improve-codebase-architecture/agents/openai.yaml",
+    "sha256": "b324274c40e2363e5541c6a2a72f38a0e40aba16a299db6b65df13786502abcc"
+  },
+  {
+    "path": "skills/improve-codebase-architecture/HTML-REPORT.md",
+    "sha256": "2421279eaefbd3ee79b35b0cfe00e54d3556645c4e28901ebc56d9544c3315ab"
+  },
+  {
+    "path": "skills/improve-codebase-architecture/LICENSE",
+    "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+  },
+  {
+    "path": "skills/improve-codebase-architecture/SKILL.md",
+    "sha256": "98e8372aae97454d2908bf7b995d28feb1f6b04c8146baeb69ae1e873903057c"
+  },
+  {
+    "path": "skills/codebase-design/agents/openai.yaml",
+    "sha256": "3c27d9347279e303adaad778acaad16a70129b3b0d567cea48c84ada079d12e1"
+  },
+  {
+    "path": "skills/codebase-design/DEEPENING.md",
+    "sha256": "0c17c85d65b5d12f176461dace4533c62cf7df85351f1af891d16bdbe4289458"
+  },
+  {
+    "path": "skills/codebase-design/DESIGN-IT-TWICE.md",
+    "sha256": "aa52235b477561760a6228a79233e6ef521c2bda0acd6256ee2529ea1cb22e0f"
+  },
+  {
+    "path": "skills/codebase-design/LICENSE",
+    "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+  },
+  {
+    "path": "skills/codebase-design/SKILL.md",
+    "sha256": "cb9c6e530f27f90f3797d3bad4ef0db92f78c86111d6f10de943ce13a847077c"
+  },
+  {
+    "path": "skills/domain-modeling/ADR-FORMAT.md",
+    "sha256": "944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0"
+  },
+  {
+    "path": "skills/domain-modeling/agents/openai.yaml",
+    "sha256": "8d5ec19a6d48365f93efbf826c71df5b1f59db437481cf7fc5fd5d38f2d831f0"
+  },
+  {
+    "path": "skills/domain-modeling/GLOSSARY-FORMAT.md",
+    "sha256": "21dcc40cdec8e151a829b98ab1517c1867bc444e3665134a98c6983411996801"
+  },
+  {
+    "path": "skills/domain-modeling/LICENSE",
+    "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+  },
+  {
+    "path": "skills/domain-modeling/SKILL.md",
+    "sha256": "368962594b69560c7ff5b0b6f84dd6ffb67d9182303f5b62110b7c5eb9b5225d"
+  },
+  {
+    "path": "skills/grilling/agents/openai.yaml",
+    "sha256": "ed9587f7a9af4741b0740a88110c193aababb85734e790b21a95f14abe51dd1e"
+  },
+  {
+    "path": "skills/grilling/LICENSE",
+    "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+  },
+  {
+    "path": "skills/grilling/SKILL.md",
+    "sha256": "06b9a28a4a7ed2cc7d373b39bc389b26a27d7467547b0c37031f301fd2c97498"
+  },
+  {
+    "path": "skills/differential-review/adversarial.md",
+    "sha256": "95aa9af63d779a7f339fa72f3f56d6c6c91b3291f59d0cae9116ff298d3f7a9a"
+  },
+  {
+    "path": "skills/differential-review/agents/openai.yaml",
+    "sha256": "f97f4185a1ba4c80c4078d64c2ef3c63309989cef37891d53eaef0c46be1dc28"
+  },
+  {
+    "path": "skills/differential-review/assets/trail-of-bits-mark.svg",
+    "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05"
+  },
+  {
+    "path": "skills/differential-review/LICENSE",
+    "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+  },
+  {
+    "path": "skills/differential-review/methodology.md",
+    "sha256": "df1f46cdc8a7ebf5e428336f097bc6b6006ff4707b489c947db0a4760f99d67f"
+  },
+  {
+    "path": "skills/differential-review/patterns.md",
+    "sha256": "a77b606049dc22116a36c5ef0fa7c4ef20de5cde047f9ad516bcde806cb1da8f"
+  },
+  {
+    "path": "skills/differential-review/reporting.md",
+    "sha256": "a0137c153ee1496d8fff4b61943e3f929a8f0a8957010a0a09b103d111eb98a4"
+  },
+  {
+    "path": "skills/differential-review/SKILL.md",
+    "sha256": "80b027b6952e80fdac2b2d2de73facb14f7199c76d067ae8d78d007efb79d84d"
+  },
+  {
+    "path": "skills/property-based-testing/agents/openai.yaml",
+    "sha256": "eda61fc40132d440f091da1accc28efd92da06b4f7c46ef38570fa9b9d1bcd34"
+  },
+  {
+    "path": "skills/property-based-testing/assets/trail-of-bits-mark.svg",
+    "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05"
+  },
+  {
+    "path": "skills/property-based-testing/LICENSE",
+    "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+  },
+  {
+    "path": "skills/property-based-testing/README.md",
+    "sha256": "ffbe30eec09cc64fb1eae836b07ca1d82939bda3f1e6f0dceadcdd78793a3112"
+  },
+  {
+    "path": "skills/property-based-testing/references/generating.md",
+    "sha256": "c0e72dfc89babe3c32de718b81b94044362c85e776d7475e950dfeaab78bb58e"
+  },
+  {
+    "path": "skills/property-based-testing/references/interpreting-failures.md",
+    "sha256": "dbae7db8773712ba03268a3d56ea5aa6720af0650a5189580bfd88aa2edc3f9a"
+  },
+  {
+    "path": "skills/property-based-testing/references/libraries.md",
+    "sha256": "f7218acf8e668130ef3048983472579d04e12030c5401926f666363e5f69c686"
+  },
+  {
+    "path": "skills/property-based-testing/references/refactoring.md",
+    "sha256": "6eb5c206f575704791f089608bb06e41d6eed91b9d3c7fb27912f969aed07a18"
+  },
+  {
+    "path": "skills/property-based-testing/references/reviewing.md",
+    "sha256": "110b08118a1e7b1a2566def6e9d2a0bf43fc2deefce857d2ce3b4382b07bc774"
+  },
+  {
+    "path": "skills/property-based-testing/SKILL.md",
+    "sha256": "d4260cb057647f3738a9d04e6103173878642f0129a7735818a49a5f365f784b"
+  },
+  {
+    "path": "skills/htmx/.tessl-plugin/plugin.json",
+    "sha256": "99731a8a05fe0feef6ec2aa12bf9492af7b77ebc6b1b54f3b7f84fc213463209"
+  },
+  {
+    "path": "skills/htmx/references/attributes.md",
+    "sha256": "61aad2a86a3b244906eb1ddf2f42739cb4bebf26d7d01d6065c382079e1fdff6"
+  },
+  {
+    "path": "skills/htmx/references/events-api.md",
+    "sha256": "e84e7641b5e82f608602033eb18a379ae376dc1e2aad8c70fdbbf02a4442a0b9"
+  },
+  {
+    "path": "skills/htmx/references/extensions.md",
+    "sha256": "d503a68d425681134574c0423231ccf3c868f442c3fb0e777447af587d4a42c2"
+  },
+  {
+    "path": "skills/htmx/references/gotchas.md",
+    "sha256": "04c95f7775196c70d7d3b2c6bfe1748cd2e70cf841b5c15f682ebf74f5894434"
+  },
+  {
+    "path": "skills/htmx/references/patterns.md",
+    "sha256": "2b17415e80ab9bfbd225e08117a861da38b11727afeb76eb9d483f8bce1b9d01"
+  },
+  {
+    "path": "skills/htmx/references/REFERENCE.md",
+    "sha256": "c6c754c53fce4b1de762751c0247009453b9def35b907a08bb010d4554853951"
+  },
+  {
+    "path": "skills/htmx/references/requests.md",
+    "sha256": "bee6e73d108fa76b8afe595082f830348eeff7c775c43359b1adbc056c702970"
+  },
+  {
+    "path": "skills/htmx/references/swapping.md",
+    "sha256": "dbff33ac8ddc52e27b688ef824cff1056784ac38f9b2c3172dec003b1955ed34"
+  },
+  {
+    "path": "skills/htmx/SKILL.md",
+    "sha256": "e492078db3f3f205ef9b3724eb8ce34bcb5e48af55f4aa7a1f83d8781dba3cff"
+  },
+  {
+    "path": "skills/web-design-guidelines/references/WEB-INTERFACE-GUIDELINES-LICENSE",
+    "sha256": "6cd1609c9c12233507cdd2ce0d32e9a721e3c27494951be06b90090deeeb7af2"
+  },
+  {
+    "path": "skills/web-design-guidelines/references/web-interface-guidelines.md",
+    "sha256": "7192ccac934bd1f72a40608c38a1c1a461bfa02fca35b053b53044c8323906d0"
+  },
+  {
+    "path": "skills/web-design-guidelines/SKILL.md",
+    "sha256": "8b285cad0b22609d7359d9abc857c2e7a30c0b83bbf93646fab7f38afc60e299"
+  },
+  {
+    "path": "skills/openspec-apply-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-apply-change/SKILL.md",
+    "sha256": "6fd4138dd4fea1700aac48a07937745d18d3aa72818e81d35e00dcbcbd92ab4a"
+  },
+  {
+    "path": "skills/openspec-archive-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-archive-change/SKILL.md",
+    "sha256": "a454a04870492fd88455b176b124f7fbbdbf80c972fd45135ee5265ac73009a8"
+  },
+  {
+    "path": "skills/openspec-bulk-archive-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-bulk-archive-change/SKILL.md",
+    "sha256": "9ca2b228fb9053be7102890fa68ac1de4eaae63f12bfa802d755145fdd5d6612"
+  },
+  {
+    "path": "skills/openspec-continue-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-continue-change/SKILL.md",
+    "sha256": "729df4ac10ac133876dfeb55f31cb475b69d15c6a60accb918107a17eddc2b3b"
+  },
+  {
+    "path": "skills/openspec-explore/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-explore/SKILL.md",
+    "sha256": "a53aec5bcec1dd15b02ca788ec96e1c6b8fe3ca2a98bfba0122f16aea4203afb"
+  },
+  {
+    "path": "skills/openspec-ff-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-ff-change/SKILL.md",
+    "sha256": "0495e2f39e0eec6de85a17fca9a9dba23dbba055722cfd0618d9249ced49caa5"
+  },
+  {
+    "path": "skills/openspec-new-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-new-change/SKILL.md",
+    "sha256": "f44af7ec7b69d8a09914a4b7df12f6b4cc4994051b976fad72f84326794edb67"
+  },
+  {
+    "path": "skills/openspec-onboard/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-onboard/SKILL.md",
+    "sha256": "4a9ebd23c192e1b2bf61c79ce2265944988515dc8df6521c011aadacd8ec6de8"
+  },
+  {
+    "path": "skills/openspec-propose/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-propose/SKILL.md",
+    "sha256": "6781745bd46dc3fe4c8b63919129dfa1a4ca28133edbd440b1255f6be8374c52"
+  },
+  {
+    "path": "skills/openspec-sync-specs/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-sync-specs/SKILL.md",
+    "sha256": "6adda1cd4ba79409be7b199bbf28e4aaeb60607a6084cad1d2a2a2cf40daa3f5"
+  },
+  {
+    "path": "skills/openspec-update-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-update-change/SKILL.md",
+    "sha256": "e4e70063b360a3ace03f0878c00c03766581aceda6bc5ccd35f1d7a6c02a68bf"
+  },
+  {
+    "path": "skills/openspec-verify-change/LICENSE",
+    "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64"
+  },
+  {
+    "path": "skills/openspec-verify-change/SKILL.md",
+    "sha256": "d7319af7667784e8e5b8861cc89f8a36083799260c6a36e91f1c24ca19f93767"
+  },
+  {
+    "path": "alternatives/planning-with-files/examples.md",
+    "sha256": "d280d7ed1417044526639e2a3ec266f761ecf5c4d225bf3adcd319105735ef47"
+  },
+  {
+    "path": "alternatives/planning-with-files/LICENSE",
+    "sha256": "4f2e5ecfaa4e0833621cfe54c0bdc2f60f086c0925540d7bdc713517eafb3c84"
+  },
+  {
+    "path": "alternatives/planning-with-files/plan-inventory.md",
+    "sha256": "2fd0804984a12a63a52d272ac9d11343dc6d57c26876535161afd5f119bb921d"
+  },
+  {
+    "path": "alternatives/planning-with-files/reference.md",
+    "sha256": "8f7d9cfe1971c5a32f3e5edb63ddfad73a11cc7de19d5065a6ec75fd118c0fdb"
+  },
+  {
+    "path": "alternatives/planning-with-files/references/attestation-locking.md",
+    "sha256": "3e548b96627f124cca54c578d9a4475448b22d06caa3c5b5e253cea509d92640"
+  },
+  {
+    "path": "alternatives/planning-with-files/references/perf-notes.md",
+    "sha256": "3443aa15ef1571930c1dbf34c5fede41312bc19d04064004bc060c5c6702ee42"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/attest-plan.ps1",
+    "sha256": "290380786906513e86546b5db3dce2b3e178fc4d8809627345945acaeae74654"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/attest-plan.sh",
+    "sha256": "4ec2159e6b09d4e5e85082f8491eb8cd2e1addb79e96ad931aa97d51e4f48320"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/check-complete.ps1",
+    "sha256": "c3b3d3a6067c1781647526d0d4367a04bdacf9f8165940cb6d699fb194d794cd"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/check-complete.sh",
+    "sha256": "1b051cfad0e03a207322989fff4b620799bd2463c62c03ebef350fce1d4e1b08"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/gate-stop.sh",
+    "sha256": "ed4f138ccd9ec727ccc5d966a523c8f8506779d93a30ec0329282b23c511c0e6"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/init-session.ps1",
+    "sha256": "6e5935cf51d435be418e9453d32a6aabc2e78e31f5b34d523fd0ef73f1b54c33"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/init-session.sh",
+    "sha256": "5e1fad55b3623e2d5d726094002999598337911ab919265c60d7efbd321562e2"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/inject-plan.py",
+    "sha256": "89233f24eb693592123889af9c9fa030c001b3b3be2d3c4840ddc3040e844b2e"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/inject-plan.sh",
+    "sha256": "c925c072977f5de2db5f91dd060d712e7f0457b03b6b62e3d3cd4bc7ae5562d5"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/ledger-append.ps1",
+    "sha256": "d88796090a234f78ae07131e7dfe7ca6de0987d6fd5a4588fffa89bdb1d569c7"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/ledger-append.sh",
+    "sha256": "d918315f8b73a2a1e1dddef1c76798d1fd72f5f99644ff34115d0e7ac7e69290"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/ledger-summary.ps1",
+    "sha256": "eea1e8f5e4a6b5fabc1acac22c94fae9ccac6c01a5dbf726503b64125a1acd62"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/ledger-summary.sh",
+    "sha256": "064486ba5c0519eb9df7e5fb2f8c98e121b9d4b454ccaa1550bab6dffb047839"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/phase-status.ps1",
+    "sha256": "14af4ffbbbb11295839cffe3fbc1970dc131d26b5e3eecf0e9775315341b9473"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/phase-status.sh",
+    "sha256": "364fa7568fb93efcb485468ae47033f1350c1e0a8bfb00f5857d3e07424c82a9"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/plan-doctor.sh",
+    "sha256": "5a4ef77e2889469f7d1172acde7edb6bf65134d70455aa632f405fea8dbf772d"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/resolve-plan-dir.ps1",
+    "sha256": "fc47c52f30aab6d2cb24714526d83792c315f591abc9c26ddc8be17eb15aeeab"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/resolve-plan-dir.sh",
+    "sha256": "3a4cbbefb518147a34081f747e677ce228b80eca886e849c132990362314a65d"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/session-catchup.py",
+    "sha256": "ce8e81ff88748185d6afc82860cdfa37bf5134d92ceb7db674585e1db1a4003d"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/set-active-plan.ps1",
+    "sha256": "388d5ac06e94cb2fc8200b0718fdc99ae3cba5b00a4f3566a71f9e3ff63e6c5d"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/set-active-plan.sh",
+    "sha256": "cd21d07c4a6827d4248886caacfde03dbd73ea9008eb8ab80fe346c9366c5606"
+  },
+  {
+    "path": "alternatives/planning-with-files/scripts/skill-hook.sh",
+    "sha256": "94222927ed8a8f9f4cade8cf8911059dd40fa5090b8728fde007bfbee7782cb9"
+  },
+  {
+    "path": "alternatives/planning-with-files/SKILL.md",
+    "sha256": "51e4f9e22a459b769eb22999c8fba702fb022b3e26e47c28d7920fece5555742"
+  },
+  {
+    "path": "alternatives/planning-with-files/templates/analytics_findings.md",
+    "sha256": "cd46495d0a7d59f150f1ecc7f9528bb1b0856bec73a2d04e06f48cdb6798ec0f"
+  },
+  {
+    "path": "alternatives/planning-with-files/templates/analytics_task_plan.md",
+    "sha256": "c58c0cff7148117a0728c136462faf256848f1e5ef9a7ed528b4f60b7a831ff9"
+  },
+  {
+    "path": "alternatives/planning-with-files/templates/findings.md",
+    "sha256": "bb9237ccbf08148d7f7f23ad58fbc9bd7c879c6d0cbca1d533b5b5f21c26c529"
+  },
+  {
+    "path": "alternatives/planning-with-files/templates/loop.md",
+    "sha256": "cb13b5f1030a015442a981da69fa0dc910f78f4782ebfa2fd0eac00d6e71a143"
+  },
+  {
+    "path": "alternatives/planning-with-files/templates/progress.md",
+    "sha256": "28fc357000ed2b18910c4e436f0f2e02f4abf0acd29cce370a2670640974f31c"
+  },
+  {
+    "path": "alternatives/planning-with-files/templates/task_plan.md",
+    "sha256": "3c4b61444270f689c3dab81b7113467fb87e9705175aea9c3a3b970bd4e777a3"
+  },
+  {
+    "path": "alternatives/planning-with-files/templates/task_plan_autonomous.md",
+    "sha256": "5a93e639a15a3d0e4f89d915199cf09cdd211441547eba86bed34164edc25891"
+  },
+  {
+    "path": "runtime/browser_guard.py",
+    "sha256": "6ed27235a502eece0249e28322eababadee0e0fac20000e06c157b2b8240a342"
+  },
+  {
+    "path": "runtime/offline_python.py",
+    "sha256": "39d150857c27fd92fd14abe1dc4e79c09e5b4189df8662d59eb44e9d58b5fcb1"
+  },
+  {
+    "path": "runtime/openspec_offline.py",
+    "sha256": "d4e670b79b63832a644ab3fa401f7bb3d0bfd6b8e92725276c0f9e37e8854f62"
+  },
+  {
+    "path": "runtime/guard/sitecustomize.py",
+    "sha256": "17504ab2d9a5c23cb4e64be77e45eb47d262f960e71fd85511cfb065f13a17fa"
+  },
+  {
+    "path": "tools/local_with_server.py",
+    "sha256": "7ca65867208347fefef27d71d4e336027367263c85130e8406e9d2b9a7a5269c"
+  }
+]

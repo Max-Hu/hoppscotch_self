@@ -1,0 +1,342 @@
+--- upstream\anthropics--skills\skills\webapp-testing\examples\console_logging.py
++++ skills\webapp-testing\examples\console_logging.py
+@@ -1,4 +1,5 @@
+ from playwright.sync_api import sync_playwright
++from browser_guard import protect_context, launch_local_browser
+ 
+ # Example: Capturing console logs during browser automation
+ 
+@@ -7,8 +8,10 @@
+ console_logs = []
+ 
+ with sync_playwright() as p:
+-    browser = p.chromium.launch(headless=True)
+-    page = browser.new_page(viewport={'width': 1920, 'height': 1080})
++    browser = launch_local_browser(p)
++    context = browser.new_context(service_workers="block", viewport={'width': 1920, 'height': 1080})
++    protect_context(context, blocked=[])
++    page = context.new_page()
+ 
+     # Set up console log capture
+     def handle_console_message(msg):
+@@ -19,7 +22,7 @@
+ 
+     # Navigate to page
+     page.goto(url)
+-    page.wait_for_load_state('networkidle')
++    page.wait_for_load_state('domcontentloaded')
+ 
+     # Interact with the page (triggers console logs)
+     page.click('text=Dashboard')
+@@ -32,4 +35,4 @@
+     f.write('\n'.join(console_logs))
+ 
+ print(f"\nCaptured {len(console_logs)} console messages")
+-print(f"Logs saved to: /mnt/user-data/outputs/console.log")+print(f"Logs saved to: /mnt/user-data/outputs/console.log")
+--- upstream\anthropics--skills\skills\webapp-testing\examples\element_discovery.py
++++ skills\webapp-testing\examples\element_discovery.py
+@@ -1,14 +1,17 @@
+ from playwright.sync_api import sync_playwright
++from browser_guard import protect_context, launch_local_browser
+ 
+ # Example: Discovering buttons and other elements on a page
+ 
+ with sync_playwright() as p:
+-    browser = p.chromium.launch(headless=True)
+-    page = browser.new_page()
++    browser = launch_local_browser(p)
++    context = browser.new_context(service_workers="block", )
++    protect_context(context, blocked=[])
++    page = context.new_page()
+ 
+     # Navigate to page and wait for it to fully load
+     page.goto('http://localhost:5173')
+-    page.wait_for_load_state('networkidle')
++    page.wait_for_load_state('domcontentloaded')
+ 
+     # Discover all buttons on the page
+     buttons = page.locator('button').all()
+@@ -37,4 +40,4 @@
+     page.screenshot(path='/tmp/page_discovery.png', full_page=True)
+     print("\nScreenshot saved to /tmp/page_discovery.png")
+ 
+-    browser.close()+    browser.close()
+--- upstream\anthropics--skills\skills\webapp-testing\examples\static_html_automation.py
++++ skills\webapp-testing\examples\static_html_automation.py
+@@ -1,4 +1,5 @@
+ from playwright.sync_api import sync_playwright
++from browser_guard import protect_context, launch_local_browser
+ import os
+ 
+ # Example: Automating interaction with static HTML files using file:// URLs
+@@ -7,8 +8,10 @@
+ file_url = f'file://{html_file_path}'
+ 
+ with sync_playwright() as p:
+-    browser = p.chromium.launch(headless=True)
+-    page = browser.new_page(viewport={'width': 1920, 'height': 1080})
++    browser = launch_local_browser(p)
++    context = browser.new_context(service_workers="block", viewport={'width': 1920, 'height': 1080})
++    protect_context(context, blocked=[])
++    page = context.new_page()
+ 
+     # Navigate to local HTML file
+     page.goto(file_url)
+@@ -30,4 +33,4 @@
+ 
+     browser.close()
+ 
+-print("Static HTML automation completed!")+print("Static HTML automation completed!")
+--- upstream\anthropics--skills\skills\webapp-testing\scripts\with_server.py
++++ skills\webapp-testing\scripts\with_server.py
+@@ -1,106 +1,63 @@
+-#!/usr/bin/env python3
+-"""
+-Start one or more servers, wait for them to be ready, run a command, then clean up.
++"""Offline replacement for webapp-testing's shell-based server helper."""
++import argparse
++import os
++from pathlib import Path
++import shlex
++import socket
++import subprocess
++import sys
++import tempfile
++import time
+ 
+-Usage:
+-    # Single server
+-    python scripts/with_server.py --server "npm run dev" --port 5173 -- python automation.py
+-    python scripts/with_server.py --server "npm start" --port 3000 -- python test.py
+-
+-    # Multiple servers
+-    python scripts/with_server.py \
+-      --server "cd backend && python server.py" --port 3000 \
+-      --server "cd frontend && npm run dev" --port 5173 \
+-      -- python test.py
+-"""
+-
+-import subprocess
+-import socket
+-import time
+-import sys
+-import argparse
+-
+-def is_server_ready(port, timeout=30):
+-    """Wait for server to be ready by polling the port."""
+-    start_time = time.time()
+-    while time.time() - start_time < timeout:
+-        try:
+-            with socket.create_connection(('localhost', port), timeout=1):
+-                return True
+-        except (socket.error, ConnectionRefusedError):
+-            time.sleep(0.5)
+-    return False
+-
++def python_command(text):
++    parts=shlex.split(text,posix=True)
++    if not parts or Path(parts[0]).name.lower() not in ('python','python3','python.exe','python3.exe'):
++        raise ValueError('Only local Python server commands are supported by this offline helper')
++    if any(p in ('&&',';','|') for p in parts):raise ValueError('Shell operators are disabled')
++    root=Path(__file__).resolve()
++    library=next((p for p in root.parents if (p/'runtime'/'offline_python.py').is_file()),None)
++    if library is None:raise RuntimeError('Keep helper inside the portable skill-library directory')
++    sys.path.insert(0,str(library/'runtime'))
++    from offline_python import validate_python_arguments
++    validate_python_arguments(parts[1:])
++    return [sys.executable,*parts[1:]]
+ 
+ def main():
+-    parser = argparse.ArgumentParser(description='Run command with one or more servers')
+-    parser.add_argument('--server', action='append', dest='servers', required=True, help='Server command (can be repeated)')
+-    parser.add_argument('--port', action='append', dest='ports', type=int, required=True, help='Port for each server (must match --server count)')
+-    parser.add_argument('--timeout', type=int, default=30, help='Timeout in seconds per server (default: 30)')
+-    parser.add_argument('command', nargs=argparse.REMAINDER, help='Command to run after server(s) ready')
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--server',action='append',required=True)
++    parser.add_argument('--port',action='append',required=True,type=int)
++    parser.add_argument('--timeout',type=float,default=30)
++    parser.add_argument('command',nargs=argparse.REMAINDER)
++    args=parser.parse_args()
++    command=args.command[1:] if args.command[:1]==['--'] else args.command
++    if len(args.server)!=len(args.port) or not command:parser.error('Match servers/ports and supply a local Python test command')
++    servers=[python_command(s) for s in args.server]
++    command=python_command(shlex.join(command))
++    # Resolve the runtime beside the installed skill library, not through the network.
++    root=Path(__file__).resolve()
++    library=next((p for p in root.parents if (p/'runtime'/'offline_python.py').is_file()),None)
++    if library is None:raise RuntimeError('Keep helper inside the portable skill-library directory')
++    sys.path.insert(0,str(library/'runtime'))
++    from offline_python import environment
++    processes=[]
++    with tempfile.TemporaryFile() as log:
++        try:
++            for cmd,port in zip(servers,args.port):
++                with socket.socket() as probe:
++                    if probe.connect_ex(('127.0.0.1',port))==0:raise RuntimeError(f'Port {port} already in use')
++                process=subprocess.Popen(cmd,env=environment(),stdout=log,stderr=log)
++                processes.append(process);deadline=time.monotonic()+args.timeout
++                while time.monotonic()<deadline:
++                    if process.poll() is not None:raise RuntimeError('Local server exited before readiness')
++                    try:
++                        with socket.create_connection(('127.0.0.1',port),timeout=.2):break
++                    except OSError:time.sleep(.1)
++                else:raise TimeoutError('Local server readiness timed out')
++            return subprocess.call(command,env=environment())
++        finally:
++            for process in reversed(processes):
++                process.terminate()
++                try:process.wait(timeout=5)
++                except subprocess.TimeoutExpired:process.kill();process.wait()
+ 
+-    args = parser.parse_args()
+-
+-    # Remove the '--' separator if present
+-    if args.command and args.command[0] == '--':
+-        args.command = args.command[1:]
+-
+-    if not args.command:
+-        print("Error: No command specified to run")
+-        sys.exit(1)
+-
+-    # Parse server configurations
+-    if len(args.servers) != len(args.ports):
+-        print("Error: Number of --server and --port arguments must match")
+-        sys.exit(1)
+-
+-    servers = []
+-    for cmd, port in zip(args.servers, args.ports):
+-        servers.append({'cmd': cmd, 'port': port})
+-
+-    server_processes = []
+-
+-    try:
+-        # Start all servers
+-        for i, server in enumerate(servers):
+-            print(f"Starting server {i+1}/{len(servers)}: {server['cmd']}")
+-
+-            # Use shell=True to support commands with cd and &&
+-            process = subprocess.Popen(
+-                server['cmd'],
+-                shell=True,
+-                stdout=subprocess.PIPE,
+-                stderr=subprocess.PIPE
+-            )
+-            server_processes.append(process)
+-
+-            # Wait for this server to be ready
+-            print(f"Waiting for server on port {server['port']}...")
+-            if not is_server_ready(server['port'], timeout=args.timeout):
+-                raise RuntimeError(f"Server failed to start on port {server['port']} within {args.timeout}s")
+-
+-            print(f"Server ready on port {server['port']}")
+-
+-        print(f"\nAll {len(servers)} server(s) ready")
+-
+-        # Run the command
+-        print(f"Running: {' '.join(args.command)}\n")
+-        result = subprocess.run(args.command)
+-        sys.exit(result.returncode)
+-
+-    finally:
+-        # Clean up all servers
+-        print(f"\nStopping {len(server_processes)} server(s)...")
+-        for i, process in enumerate(server_processes):
+-            try:
+-                process.terminate()
+-                process.wait(timeout=5)
+-            except subprocess.TimeoutExpired:
+-                process.kill()
+-                process.wait()
+-            print(f"Server {i+1} stopped")
+-        print("All servers stopped")
+-
+-
+-if __name__ == '__main__':
+-    main()+if __name__=='__main__':raise SystemExit(main())
+--- upstream\anthropics--skills\skills\webapp-testing\SKILL.md
++++ skills\webapp-testing\SKILL.md
+@@ -1,8 +1,19 @@
+ ---
+ name: webapp-testing
+-description: Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.
++description: Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend
++  functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.
+ license: Complete terms in LICENSE.txt
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Web Application Testing
+ 
+@@ -26,7 +37,7 @@
+         │        Then use the helper + write simplified Playwright script
+         │
+         └─ Yes → Reconnaissance-then-action:
+-            1. Navigate and wait for networkidle
++            1. Navigate and wait for domcontentloaded
+             2. Take screenshot or inspect DOM
+             3. Identify selectors from rendered state
+             4. Execute actions with discovered selectors
+@@ -38,26 +49,29 @@
+ 
+ **Single server:**
+ ```bash
+-python scripts/with_server.py --server "npm run dev" --port 5173 -- python your_automation.py
++python scripts/with_server.py --server "python -m http.server 5173 --bind 127.0.0.1" --port 5173 -- python your_automation.py
+ ```
+ 
+ **Multiple servers (e.g., backend + frontend):**
+ ```bash
+ python scripts/with_server.py \
+-  --server "cd backend && python server.py" --port 3000 \
+-  --server "cd frontend && npm run dev" --port 5173 \
++  --server "python backend/server.py" --port 3000 \
++  --server "python -m http.server 5173 --bind 127.0.0.1 --directory frontend" --port 5173 \
+   -- python your_automation.py
+ ```
+ 
+ To create an automation script, include only Playwright logic (servers are managed automatically):
+ ```python
+ from playwright.sync_api import sync_playwright
++from browser_guard import protect_context, launch_local_browser
+ 
+ with sync_playwright() as p:
+-    browser = p.chromium.launch(headless=True) # Always launch chromium in headless mode
+-    page = browser.new_page()
++    browser = launch_local_browser(p) # Always launch chromium in headless mode
++    context = browser.new_context(service_workers="block", )
++    protect_context(context, blocked=[])
++    page = context.new_page()
+     page.goto('http://localhost:5173') # Server already running and ready
+-    page.wait_for_load_state('networkidle') # CRITICAL: Wait for JS to execute
++    page.wait_for_load_state('domcontentloaded') # CRITICAL: Wait for the specific application locator/state
+     # ... your automation logic
+     browser.close()
+ ```
+@@ -77,8 +91,8 @@
+ 
+ ## Common Pitfall
+ 
+-❌ **Don't** inspect the DOM before waiting for `networkidle` on dynamic apps
+-✅ **Do** wait for `page.wait_for_load_state('networkidle')` before inspection
++❌ **Don't** inspect the DOM before waiting for `domcontentloaded` on dynamic apps
++✅ **Do** wait for `page.wait_for_load_state('domcontentloaded')` before inspection
+ 
+ ## Best Practices
+ 
+@@ -93,4 +107,6 @@
+ - **examples/** - Examples showing common patterns:
+   - `element_discovery.py` - Discovering buttons, links, and inputs on a page
+   - `static_html_automation.py` - Using file:// URLs for local HTML
+-  - `console_logging.py` - Capturing console logs during automation+  - `console_logging.py` - Capturing console logs during automation
++
++For bundled Windows testing, use the library Python environment and an installed Edge/Chrome. On Linux pre-provision a compatible browser. Do not run a browser installer. Run scripts through `python skill-library/runtime/offline_python.py` so the browser guard module and local dependencies are available. The context guard blocks non-loopback HTTP/WebSocket requests; it is not an OS firewall. Replace long-polling network-idle waits with assertions on business UI state. Server commands must start local Python processes only.

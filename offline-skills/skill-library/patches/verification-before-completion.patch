@@ -1,0 +1,22 @@
+--- upstream\obra--superpowers\skills\verification-before-completion\SKILL.md
++++ skills\verification-before-completion\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: verification-before-completion
+-description: Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always
++description: Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running
++  verification commands and confirming output before making any success claims; evidence before assertions always
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Verification Before Completion
+ 

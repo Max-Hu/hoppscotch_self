@@ -1,0 +1,150 @@
+--- upstream\damusix--skills\htmx\references\events-api.md
++++ skills\htmx\references\events-api.md
+@@ -328,12 +328,18 @@
+ ```javascript
+ // Customize SSE EventSource creation
+ htmx.createEventSource = function(url) {
+-    return new EventSource(url, { withCredentials: true });
++    const target = new URL(url, window.location.href);
++    if (target.origin !== window.location.origin) throw new Error('Local same-origin endpoints only');
++    return new EventSource(target.href, { withCredentials: true });
+ };
+ 
+ // Customize WebSocket creation
+ htmx.createWebSocket = function(url) {
+-    return new WebSocket(url, ['wss']);
++    const target = new URL(url, window.location.href);
++    target.protocol = target.protocol === 'https:' ? 'wss:' : target.protocol === 'http:' ? 'ws:' : target.protocol;
++    const expected = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
++    if (target.host !== window.location.host || target.protocol !== expected) throw new Error('Local same-origin endpoints only');
++    return new WebSocket(target.href, ['wss']);
+ };
+ ```
+ 
+@@ -440,7 +446,7 @@
+ 
+ ```html
+ <!-- Via CDN -->
+-<script src="https://unpkg.com/htmx-ext-preload@2.1.0/preload.js"></script>
++<script src="/static/vendor/preload.js"></script>
+ 
+ <!-- Enable on element or parent -->
+ <body hx-ext="preload">
+@@ -552,10 +558,10 @@
+ 
+ ### Demo/Mock Server
+ 
+-Load `https://demo.htmx.org` in a `<script>` tag to mock server responses using `<template>` tags:
+-
+-```html
+-<script src="https://demo.htmx.org"></script>
++The upstream online demo helper is disabled. Serve mock responses from a local Python endpoint; the following templates illustrate the response content only:
++
++```html
++<!-- Online demo helper omitted. Use a local Python mock endpoint instead. -->
+ 
+ <template url="/api/greeting" delay="500">
+     <p>Hello, World!</p>
+--- upstream\damusix--skills\htmx\references\extensions.md
++++ skills\htmx\references\extensions.md
+@@ -27,19 +27,19 @@
+ 
+ Extensions are separate packages loaded after the core htmx library. Enable them with `hx-ext="<name>"` on an ancestor element (typically `<body>`).
+ 
+-### CDN
++### Local pre-provisioned assets
+ 
+ ```html
+ <head>
+     <!-- Core htmx (always first) -->
+-    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"></script>
++    <script src="/static/vendor/htmx.min.js"></script>
+ 
+     <!-- Then the extension(s) you need -->
+-    <script src="https://cdn.jsdelivr.net/npm/htmx-ext-ws@2.0.4"></script>
+-    <script src="https://cdn.jsdelivr.net/npm/htmx-ext-sse@2.2.4"></script>
+-    <script src="https://cdn.jsdelivr.net/npm/htmx-ext-response-targets@2.0.4"></script>
+-    <script src="https://cdn.jsdelivr.net/npm/htmx-ext-head-support@2.0.5"></script>
+-    <script src="https://cdn.jsdelivr.net/npm/htmx-ext-preload@2.1.2"></script>
++    <script src="/static/vendor/htmx-ext-ws@2.0.4"></script>
++    <script src="/static/vendor/htmx-ext-sse@2.2.4"></script>
++    <script src="/static/vendor/htmx-ext-response-targets@2.0.4"></script>
++    <script src="/static/vendor/htmx-ext-head-support@2.0.5"></script>
++    <script src="/static/vendor/htmx-ext-preload@2.1.2"></script>
+ </head>
+ <body hx-ext="ws, sse, preload">
+ ```
+@@ -47,7 +47,7 @@
+ Idiomorph uses a different package:
+ 
+ ```html
+-<script src="https://unpkg.com/idiomorph@0.7.4/dist/idiomorph-ext.min.js"></script>
++<script src="/static/vendor/idiomorph-ext.min.js"></script>
+ ```
+ 
+ ### npm
+--- upstream\damusix--skills\htmx\references\gotchas.md
++++ skills\htmx\references\gotchas.md
+@@ -235,7 +235,7 @@
+ </nav>
+ 
+ <!-- External links, downloads, etc. stay outside boosted containers -->
+-<a href="https://external-site.com">External Link</a>
++<span>External navigation disabled in this offline example</span>
+ <a href="/files/report.pdf" download>Download Report</a>
+ ```
+ 
+@@ -414,7 +414,7 @@
+ 
+ Or load the `htmx-2-compat` extension which restores implicit inheritance, legacy event names, and error-response defaults.
+ 
+-**Upgrade checker:** `npx htmx.org@next upgrade-check -- ./path/to/project` scans templates and JS for v2 code that needs updating.
++**Upgrade checker:** Online upgrade-check execution is disabled. Compare the pinned local HTMX documentation and templates manually.
+ 
+ ### Breaking changes
+ 
+--- upstream\damusix--skills\htmx\references\patterns.md
++++ skills\htmx\references\patterns.md
+@@ -746,7 +746,7 @@
+ Integration with Sortable.js for reorderable lists.
+ 
+ ```html
+-<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
++<script src="/static/vendor/Sortable.min.js"></script>
+ 
+ <form id="sortable-list" hx-post="/reorder" hx-trigger="end">
+     <div class="item" data-id="1"><input type="hidden" name="order[]" value="1" />Item 1</div>
+--- upstream\damusix--skills\htmx\references\swapping.md
++++ skills\htmx\references\swapping.md
+@@ -205,7 +205,7 @@
+ 
+ ```html
+ <head>
+-    <script src="https://unpkg.com/idiomorph@0.7.3/dist/idiomorph-ext.min.js"></script>
++    <script src="/static/vendor/idiomorph-ext.min.js"></script>
+ </head>
+ <body hx-ext="morph">
+     <!-- Morph swap instead of replacing -->
+--- upstream\damusix--skills\htmx\SKILL.md
++++ skills\htmx\SKILL.md
+@@ -1,7 +1,19 @@
+ ---
+ name: htmx
+-description: "Implements HTMX interactions, configures swap behaviors, debugs hx-* requests, and builds hypermedia-driven UI components. Use when tasks involve hx-* attributes, HTMX AJAX requests, swap strategies, server-sent events, WebSockets, or hypermedia-driven UIs."
++description: Implements HTMX interactions, configures swap behaviors, debugs hx-* requests, and builds hypermedia-driven UI
++  components. Use when tasks involve hx-* attributes, HTMX AJAX requests, swap strategies, server-sent events, WebSockets,
++  or hypermedia-driven UIs.
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # HTMX
+ 

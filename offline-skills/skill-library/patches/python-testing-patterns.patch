@@ -1,0 +1,90 @@
+--- upstream\wshobson--agents\plugins\python-development\skills\python-testing-patterns\references\advanced-patterns.md
++++ skills\python-testing-patterns\references\advanced-patterns.md
+@@ -18,8 +18,8 @@
+ @pytest.mark.asyncio
+ async def test_fetch_data():
+     """Test async function."""
+-    result = await fetch_data("https://api.example.com")
+-    assert result["url"] == "https://api.example.com"
++    result = await fetch_data("http://127.0.0.1:8000")
++    assert result["url"] == "http://127.0.0.1:8000"
+     assert "data" in result
+ 
+ 
+@@ -351,8 +351,8 @@
+ 
+       - name: Install dependencies
+         run: |
+-          pip install -e ".[dev]"
+-          pip install pytest pytest-cov
++          pip install --no-index --find-links "$LOCAL_WHEELHOUSE" -e ".[dev]"
++          pip install --no-index --find-links "$LOCAL_WHEELHOUSE" pytest pytest-cov
+ 
+       - name: Run tests
+         run: |
+--- upstream\wshobson--agents\plugins\python-development\skills\python-testing-patterns\references\details.md
++++ skills\python-testing-patterns\references\details.md
+@@ -217,7 +217,7 @@
+ 
+ def test_get_user_success():
+     """Test successful API call with mock."""
+-    client = APIClient("https://api.example.com")
++    client = APIClient("http://127.0.0.1:8000")
+ 
+     mock_response = Mock()
+     mock_response.json.return_value = {"id": 1, "name": "John Doe"}
+@@ -228,12 +228,12 @@
+ 
+         assert user["id"] == 1
+         assert user["name"] == "John Doe"
+-        mock_get.assert_called_once_with("https://api.example.com/users/1")
++        mock_get.assert_called_once_with("http://127.0.0.1:8000/users/1")
+ 
+ 
+ def test_get_user_not_found():
+     """Test API call with 404 error."""
+-    client = APIClient("https://api.example.com")
++    client = APIClient("http://127.0.0.1:8000")
+ 
+     mock_response = Mock()
+     mock_response.raise_for_status.side_effect = requests.HTTPError("404 Not Found")
+@@ -246,7 +246,7 @@
+ @patch("requests.post")
+ def test_create_user(mock_post):
+     """Test user creation with decorator syntax."""
+-    client = APIClient("https://api.example.com")
++    client = APIClient("http://127.0.0.1:8000")
+ 
+     mock_post.return_value.json.return_value = {"id": 2, "name": "Jane Doe"}
+     mock_post.return_value.raise_for_status.return_value = None
+--- upstream\wshobson--agents\plugins\python-development\skills\python-testing-patterns\SKILL.md
++++ skills\python-testing-patterns\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: python-testing-patterns
+-description: Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test suites, or implementing testing best practices.
++description: Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when
++  writing Python tests, setting up test suites, or implementing testing best practices.
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Python Testing Patterns
+ 
+@@ -260,7 +271,7 @@
+ 
+ ```bash
+ # Install coverage
+-pip install pytest-cov
++pip install --no-index --find-links "$LOCAL_WHEELHOUSE" pytest-cov
+ 
+ # Run tests with coverage
+ pytest --cov=myapp tests/

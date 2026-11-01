@@ -1,0 +1,82 @@
+--- upstream\wshobson--agents\plugins\python-development\skills\async-python-patterns\references\details.md
++++ skills\async-python-patterns\references\details.md
+@@ -64,7 +64,7 @@
+         print(f"Number: {number}")
+ 
+     print("\nFetching pages:")
+-    async for page_data in fetch_pages("https://api.example.com/items", 3):
++    async for page_data in fetch_pages("http://127.0.0.1:8000/items", 3):
+         print(f"Page {page_data['page']}: {len(page_data['data'])} items")
+ 
+ asyncio.run(consume_async_iterator())
+@@ -142,7 +142,7 @@
+     return results
+ 
+ async def main():
+-    urls = [f"https://api.example.com/item/{i}" for i in range(20)]
++    urls = [f"http://127.0.0.1:8000/item/{i}" for i in range(20)]
+     results = await rate_limited_requests(urls, max_concurrent=3)
+     print(f"Completed {len(results)} requests")
+ 
+@@ -223,9 +223,9 @@
+ 
+ async def main():
+     urls = [
+-        "https://httpbin.org/delay/1",
+-        "https://httpbin.org/delay/2",
+-        "https://httpbin.org/status/404",
++        "http://127.0.0.1:8000/delay/1",
++        "http://127.0.0.1:8000/delay/2",
++        "http://127.0.0.1:8000/status/404",
+     ]
+ 
+     results = await scrape_urls(urls)
+@@ -350,7 +350,7 @@
+     connector = aiohttp.TCPConnector(limit=100, limit_per_host=10)
+ 
+     async with aiohttp.ClientSession(connector=connector) as session:
+-        tasks = [session.get(f"https://api.example.com/item/{i}") for i in range(50)]
++        tasks = [session.get(f"http://127.0.0.1:8000/item/{i}") for i in range(50)]
+         responses = await asyncio.gather(*tasks)
+         return responses
+ ```
+--- upstream\wshobson--agents\plugins\python-development\skills\async-python-patterns\SKILL.md
++++ skills\async-python-patterns\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: async-python-patterns
+-description: Master Python asyncio, concurrent programming, and async/await patterns for high-performance applications. Use when building async APIs, concurrent systems, or I/O-bound applications requiring non-blocking operations.
++description: Master Python asyncio, concurrent programming, and async/await patterns for high-performance applications. Use
++  when building async APIs, concurrent systems, or I/O-bound applications requiring non-blocking operations.
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Async Python Patterns
+ 
+@@ -100,7 +111,7 @@
+     return {"url": url, "data": "result"}
+ 
+ async def main():
+-    result = await fetch_data("https://api.example.com")
++    result = await fetch_data("http://127.0.0.1:8000")
+     print(result)
+ 
+ asyncio.run(main())
+@@ -284,7 +295,7 @@
+ @pytest.mark.asyncio
+ async def test_async_function():
+     """Test async function."""
+-    result = await fetch_data("https://api.example.com")
++    result = await fetch_data("http://127.0.0.1:8000")
+     assert result is not None
+ 
+ @pytest.mark.asyncio

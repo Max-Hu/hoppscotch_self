@@ -1,0 +1,59 @@
+--- upstream\mattpocock--skills\skills\engineering\codebase-design\agents\openai.yaml
++++ skills\codebase-design\agents\openai.yaml
+@@ -1,3 +1,3 @@
+ interface:
+-  display_name: "Codebase Design"
+-  short_description: "Vocabulary for deep-module design"
++  display_name: Codebase Design
++  short_description: Vocabulary for deep-module design
+--- upstream\mattpocock--skills\skills\engineering\codebase-design\DEEPENING.md
++++ skills\codebase-design\DEEPENING.md
+@@ -35,3 +35,7 @@
+ - Write new tests at the deepened module's interface. The **interface is the test surface**.
+ - Tests assert on observable outcomes through the interface, not internal state.
+ - Tests should survive internal refactors, since they describe behaviour, not implementation. If a test has to change when the implementation changes, it's testing past the interface.
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.
+--- upstream\mattpocock--skills\skills\engineering\codebase-design\DESIGN-IT-TWICE.md
++++ skills\codebase-design\DESIGN-IT-TWICE.md
+@@ -42,3 +42,7 @@
+ Present designs sequentially so the user can absorb each one, then compare them in prose. Contrast by **depth** (leverage at the interface), **locality** (where change concentrates), and **seam placement**.
+ 
+ After comparing, give your own recommendation: which design you think is strongest and why. If elements from different designs would combine well, propose a hybrid. Be opinionated: the user wants a strong read, not a menu.
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.
+--- upstream\mattpocock--skills\skills\engineering\codebase-design\SKILL.md
++++ skills\codebase-design\SKILL.md
+@@ -1,7 +1,19 @@
+ ---
+ name: codebase-design
+-description: Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.
++description: Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface,
++  find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs
++  the deep-module vocabulary.
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Codebase Design
+ 
+@@ -112,3 +124,7 @@
+ 
+ - **Deepening a cluster given its dependencies**, see [DEEPENING.md](DEEPENING.md): dependency categories, seam discipline, and replace-don't-layer testing.
+ - **Exploring alternative interfaces**, see [DESIGN-IT-TWICE.md](DESIGN-IT-TWICE.md): spin up parallel sub-agents to design the interface several radically different ways, then compare on depth, locality, and seam placement.
++
++## Local host compatibility
++
++If a named agent or Skill tool is unavailable, read the included local template/reference and do the work in the current session. Label a self-review as such; do not claim independent review. No remote agent service is a required dependency.

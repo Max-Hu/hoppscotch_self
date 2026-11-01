@@ -1,0 +1,46 @@
+--- upstream\obra--superpowers\skills\using-git-worktrees\SKILL.md
++++ skills\using-git-worktrees\SKILL.md
+@@ -1,7 +1,18 @@
+ ---
+ name: using-git-worktrees
+-description: Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback
++description: Use when starting feature work that needs isolation from current workspace or before executing implementation
++  plans - ensures an isolated workspace exists via native tools or git worktree fallback
+ ---
++
++## Offline edition
++
++Read the project's central `PROJECT_RULES.md` before use. This is an adapted,
++pinned upstream skill. Use only local files, installed tools, local Git history,
++and explicitly designated loopback test services. Do not fetch citations,
++install packages, update tools, contact remote MCP services, or use remote Git.
++Reference URLs and API examples are documentation, not authorization to connect.
++Missing dependencies must fail closed with a local prerequisite report.
++The original source and exact patch are retained in this library for review.
+ 
+ # Using Git Worktrees
+ 
+@@ -101,22 +112,7 @@
+ 
+ ## Step 2: Project Setup
+ 
+-Auto-detect and run appropriate setup:
+-
+-```bash
+-# Node.js
+-if [ -f package.json ]; then npm install; fi
+-
+-# Rust
+-if [ -f Cargo.toml ]; then cargo build; fi
+-
+-# Python
+-if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+-if [ -f pyproject.toml ]; then poetry install; fi
+-
+-# Go
+-if [ -f go.mod ]; then go mod download; fi
+-```
++Inspect the local dependency environment. Do not install or download anything during worktree setup. Reuse pre-provisioned environments; if missing, report the prerequisite and continue independent work.
+ 
+ ## Step 3: Verify Clean Baseline
+ 
